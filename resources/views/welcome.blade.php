@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
-    <body class="min-h-screen bg-primary">
+    <body class="min-h-screen dark:bg-darkPrimary dark:text-darkText bg-primary text-text transition-all duration-300">
         <div id="app"></div>
     </body>
 </html>

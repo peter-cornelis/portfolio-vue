@@ -1,6 +1,6 @@
 import {ref, computed, onMounted, onUnmounted} from "vue";
 
-export function useGlow(options = [4, 6, 8]) {
+export function useGlow(options = [2, 4]) {
     const opacity = ref(4);
     const glow = computed(() => opacity.value / 10);
 
@@ -9,7 +9,7 @@ export function useGlow(options = [4, 6, 8]) {
     onMounted(() => {
         glowInterval = setInterval(() => {
             opacity.value = options[Math.floor(Math.random() * options.length)];
-        }, 1000);
+        }, 1500);
     });
 
     onUnmounted(() => {

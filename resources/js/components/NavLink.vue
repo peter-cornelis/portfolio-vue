@@ -14,11 +14,11 @@
         @mouseenter="setPosition($event)"
         @mouseleave="setPosition($event)"
     >
-        <a href="#{{ value }}" class="relative text-sm font-medium text-text rounded-full">
+        <a href="#{{ value }}" class="relative text-sm font-medium rounded-full">
             {{ value }}
         </a>
         <span
-            class="absolute w-96 h-48 rounded-full inset-shadow-sm bg-violet-200/7 inset-shadow -translate-x-1/2 -translate-y-1/2 scale-0 group-hover:scale-100 transition-transform duration-700"
+            class="absolute w-96 h-48 rounded-full bg-violet-950/5 dark:bg-violet-200/7 -translate-x-1/2 -translate-y-1/2 scale-0 group-hover:scale-100 transition-transform duration-700"
             :style="{ left: position.x + 'px', top: position.y + 'px' }"
         ></span>
     </li>

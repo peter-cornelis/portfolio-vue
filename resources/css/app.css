@@ -5,9 +5,17 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-sans: 'Open Sans', sans-serif;
 
-    --color-primary: #0d0a2c;
-    --color-text: oklch(98.5% 0 0);
+    --color-darkPrimary: #0d0a2c;
+    --color-darkText: #fafafa;
+    --color-primary: #f5f5f5;
+    --color-text: #0d0a2c;
+}
+
+.glass {
+    @apply bg-violet-950/2 dark:bg-violet-200/20 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-md;
 }
