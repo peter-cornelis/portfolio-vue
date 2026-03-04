@@ -1,5 +1,5 @@
 <script setup>
-    import { usePosition } from "@/composables/usePosition";
+    import { usePosition } from "@/composables/usePosition.js";
 
     defineProps({
         value: String

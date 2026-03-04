@@ -17,5 +17,5 @@
 }
 
 .glass {
-    @apply bg-violet-950/2 dark:bg-violet-200/20 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-md;
+    @apply bg-violet-950/2 dark:bg-violet-400/5 shadow-lg shadow-black/5 border border-white/5 ring-1 ring-black/5 backdrop-blur-sm;
 }

@@ -1,21 +1,30 @@
 <script setup>
     import DarkMode from "@/components/svgs/DarkMode.vue";
     import LightMode from "@/components/svgs/LightMode.vue";
-    import {ref} from 'vue';
+    import {onMounted, ref, watch} from 'vue';
     let theme = ref(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
     let switching = ref( false );
+
+    onMounted(() => setTheme(theme.value));
+
+    watch(theme, (value) => {
+        localStorage.setItem('theme', value);
+        setTheme(value);
+    });
 
     function toggleTheme() {
         switching.value = true;
         setTimeout(() => {
             theme.value = theme.value === "light" ? "dark" : "light";
-            localStorage.setItem('theme', theme.value);
-             document.documentElement.classList.toggle('dark', theme.value === 'dark');
         }, 300);
 
         setTimeout(() => {
             switching.value = false;
         }, 350);
+    }
+
+    function setTheme(value) {
+        document.documentElement.classList.toggle('dark', value === 'dark');
     }
 
 </script>
