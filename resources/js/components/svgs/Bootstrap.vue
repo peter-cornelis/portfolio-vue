@@ -1,25 +1,13 @@
+<script setup>
+    defineProps({
+        mono: {
+            type: Boolean,
+            default: false
+        }
+    });
+</script>
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-            <linearGradient id="a" x1="76.1" x2="523.5" y1="10.8" y2="365.9" gradientTransform="translate(1 15)scale(.246)" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#9013fe"/>
-            <stop offset="1" stop-color="#6610f2"/>
-            </linearGradient>
-            <linearGradient id="b" x1="193.5" x2="293.5" y1="109.7" y2="278.9" gradientTransform="translate(0 52)" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#fff"/>
-            <stop offset="1" stop-color="#f1e5fc"/>
-            </linearGradient>
-            <filter id="c" width="197" height="249" x="161.9" y="135.5" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="8"/>
-            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-            </filter>
-        </defs>
-        <path fill="url(#a)" d="M15 28q1-12 12-13h74q11 1 12 13-1 10 2 22 3 11 12 12v6q-9 1-12 12t-2 22q-1 12-12 13H27q-11-1-12-13 1-11-2-22T1 68v-6q9-1 12-12z"/>
-        <path fill="url(#b)" d="M267 364c47 0 76-23 76-61 0-29-20-50-51-53v-1c23-4 40-24 40-47 0-33-26-55-65-55h-89v217zm-55-189h46q38 0 39 31 0 33-46 34h-39zm0 162v-71h46q50 0 50 35-1 35-48 36z" filter="url(#c)" transform="translate(1 2)scale(.246)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.88 2.88">
+        <path :fill="mono ? 'currentColor' : '#7952b3'" d="M.7.43A.25.25 0 0 0 .46.7c0 .13 0 .3-.05.44-.04.14-.11.22-.23.23v.13c.12.01.2.1.23.24.05.14.05.3.05.44s.1.26.24.26h1.48c.14 0 .25-.12.24-.26 0-.13 0-.3.05-.44.04-.14.11-.23.23-.24v-.13c-.12 0-.2-.1-.23-.23C2.42 1 2.42.83 2.42.7c0-.14-.1-.26-.24-.26H.7ZM1.9 1.68c0 .19-.14.3-.37.3h-.4a.04.04 0 0 1-.04-.04V.95A.04.04 0 0 1 1.12.9h.4c.19 0 .31.11.31.27 0 .11-.08.22-.19.23.15.03.25.13.25.27Zm-.42-.63h-.22v.32h.19c.14 0 .22-.06.22-.17 0-.1-.06-.15-.19-.15zm-.22.45v.35h.23c.15 0 .23-.06.23-.18s-.08-.17-.24-.17h-.22z"/>
     </svg>
 </template>

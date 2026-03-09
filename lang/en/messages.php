@@ -59,7 +59,7 @@ return [
         'img_alt' => 'Picture of Peter Cornelis, full-stack PHP-developer',
         'hey' => 'Hey,',
         'hey_2' => 'I\'m Peter!',
-        'introduction' => 
+        'introduction' =>
             'Full-stack PHP developer with a passion for elegant code and innovative solutions. Fascinated by technology since childhood, I now channel that drive into bringing challenging projects to life.
             Solving problems and learning new things is what excites me. I bring that mindset to every project. Furthermore, I\'m also the proud father of two little rascals.',
     ],
@@ -107,26 +107,26 @@ return [
         'title' => 'Projects',
         'used' => 'Used technologies',
         'sub_dropzoned_alt' => 'Screenshot of Dropzoned website',
-        'sub_dropzoned_info' => 
-            'Application enabling seamless file uploads by combining Livewire\'s WithFileUploads traits with a custom-built drag-and-drop interface. Built with a focus on user experience, validation, and security.',
+        'sub_dropzoned_info' =>
+            'Application enabling seamless file uploads by combining Livewire\'s WithFileUploads traits with a custom-built drag-and-drop interface. Developed with a focus on user experience, validation, and security.',
         'sub_1_alt' => 'Screenshot of Portfolio 2.0 website',
-        'sub_1_info' => 
+        'sub_1_info' =>
             'Modern portfolio,
             Modern portfolio featuring an AI-powered chatbot that uses the Google Gemini API and Browserless API to compare my skills with those required by a given job vacancy link. Includes a responsive contact form with real-time validation.',
         'sub_2_alt' => 'Screenshot of stock market game website',
-        'sub_2_info' => 
-            'Simple stock market game with daily price and statistics updates through the FMP API. 
+        'sub_2_info' =>
+            'Simple stock market game with daily price and statistics updates through the FMP API.
             AI integration enhances search functionality and provides up-to-date buy or sell recommendations for each stock.',
         'sub_3_alt' => 'Screenshot of video store website',
-        'sub_3_info' => 
-            'Web application for managing a video rental store\'s movie collection. 
+        'sub_3_info' =>
+            'Web application for managing a video rental store\'s movie collection.
             Staff members must log in with proper authentication. This was my first Laravel project.',
         'sub_4_alt' => 'Screenshot of Portfolio 1.0 website',
-        'sub_4_info' => 
-            'First portfolio website featuring multilingual support using JSON and JavaScript. 
+        'sub_4_info' =>
+            'First portfolio website featuring multilingual support using JSON and JavaScript.
             Includes Project Euler coding challenges as an a funn extra.',
         'sub_5_alt' => 'Screenshot of pizzeria website',
-        'sub_5_info' => 
+        'sub_5_info' =>
             'Pizzeria webshop with a simple implementation of the Mollie API.
             This was a test for the PHP Advanced course.
             Feel free to contact me if you want to review the code.',

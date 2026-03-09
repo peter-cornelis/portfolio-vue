@@ -75,7 +75,5 @@ const ratings = {
                     </ul>
                 </div>
             </div>
-
-
     </section>
 </template>
