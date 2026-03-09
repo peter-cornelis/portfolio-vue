@@ -9,9 +9,7 @@ createInertiaApp({
         const i18n = createI18n({
             legacy: false,
             locale,
-            messages: {
-                [locale]: props.initialPage.props.translations || {}
-            }
+            messages: props.initialPage.props.translations || {},
         })
 
         createApp({ render: () => h(App, props) })

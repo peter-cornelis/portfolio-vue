@@ -1,0 +1,26 @@
+/* Elements */
+section {
+    @apply max-w-7xl mx-auto p-8;
+}
+
+section:not(#about) h2 {
+    @apply text-center;
+}
+
+h2 {
+    @apply text-5xl my-8;
+}
+
+h3 {
+    @apply text-2xl mb-2;
+}
+
+/* Classes */
+
+.glass {
+    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-lg shadow-black/5 border border-white/5 ring-1 ring-black/5 backdrop-blur-sm;
+}
+
+.white-glass {
+    @apply bg-white/85 dark:text-text shadow-lg border border-indigo-950/5 dark:border-indigo-950/25 backdrop-blur-sm;
+}

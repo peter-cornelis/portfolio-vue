@@ -22,7 +22,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Inertia::share([
             'locale' => fn() => app()->getLocale(),
-            'translations' => fn() => trans('messages'),
+            'translations' => fn() => [
+                app()->getLocale() => trans('messages'),
+                app()->getLocale() === 'en' ? 'nl' : 'en' => trans('messages', [], app()->getLocale() === 'en' ? 'nl' : 'en'),
+            ],
         ]);
     }
 }

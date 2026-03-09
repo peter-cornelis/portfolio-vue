@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@import './custom.css';
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -14,8 +16,4 @@
     --color-darkText: #fafafa;
     --color-primary: #f5f5f5;
     --color-text: #0d0a2c;
-}
-
-.glass {
-    @apply bg-violet-950/2 dark:bg-violet-400/5 shadow-lg shadow-black/5 border border-white/5 ring-1 ring-black/5 backdrop-blur-sm;
 }
