@@ -16,7 +16,7 @@ const ratings = {
     <section id="skills">
         <h2>{{ t('skills.title') }}</h2>
         <div class="relative w-fit mx-auto">
-            <span aria-hidden="true" class="absolute -top-25 -right-25 bg-linear-to-br from-emerald-300 dark:from-teal-600 to-lime-200 dark:to-rose-300 w-40 h-40 rounded-full -z-10 transition-all duration-2000">
+            <span aria-hidden="true" class="absolute -top-25 -right-25 bg-linear-to-br from-emerald-300 dark:from-teal-500 to-lime-200 dark:to-rose-300 w-40 h-40 rounded-full -z-10 transition-all duration-2000">
             </span>
             <article class=" white-glass px-6 py-4 w-fit rounded-lg">
                 <h3 class="text-center">{{ t('skills.sub_1_title') }}</h3>
@@ -56,14 +56,24 @@ const ratings = {
                     </ul>
                 </div>
             </article>
-            <div>
+            <div class="overflow-x-clip">
                 <h4 class="text-2xl text-center">{{ t('skills.carousel_title') }}</h4>
-                <ul class="flex gap-8 my-8">
-                    <li v-for="(component, key) in techIcons" :key="key">
-                        <component :is="component.icon" class="h-12 mx-auto"/>
-                        <span class="block text-center mt-2">{{ component.name }}</span>
-                    </li>
-                </ul>
+                <div class="relative flex">
+                    <div class="absolute z-20 left-0 w-16 h-full bg-linear-to-r from-primary dark:from-darkPrimary to-transparent"></div>
+                    <div class="absolute z-20 right-0 w-16 h-full bg-linear-to-l from-primary dark:from-darkPrimary to-transparent"></div>
+                    <ul class="flex gap-16 my-8 mx-auto px-8 w-fit animate-scroll">
+                        <li v-for="(component, key) in techIcons" :key="key" class="group w-16">
+                            <component :is="component.icon" class="h-12 mx-auto group-hover:scale-125 transition-transform duration-300"/>
+                            <span class="block text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ component.name }}</span>
+                        </li>
+                    </ul>
+                    <ul class="flex gap-16 my-8 mx-auto px-8 w-fit animate-scroll" aria-hidden="true">
+                        <li v-for="(component, key) in techIcons" :key="key" class="group w-16">
+                            <component :is="component.icon" class="h-12 mx-auto group-hover:scale-125 transition-transform duration-300"/>
+                            <span class="block text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ component.name }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
 

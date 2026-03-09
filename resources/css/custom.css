@@ -24,3 +24,9 @@ h3 {
 .white-glass {
     @apply bg-white/85 dark:text-text shadow-lg border border-indigo-950/5 dark:border-indigo-950/25 backdrop-blur-sm;
 }
+
+/* Animations */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%) }
+}

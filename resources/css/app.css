@@ -16,4 +16,6 @@
     --color-darkText: #fafafa;
     --color-primary: #f5f5f5;
     --color-text: #0d0a2c;
+
+    --animate-scroll: scroll 60s linear infinite;
 }
