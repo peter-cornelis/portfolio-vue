@@ -18,7 +18,7 @@ const ratings = {
         <div class="relative w-fit mx-auto">
             <span aria-hidden="true" class="absolute -top-25 -right-25 bg-linear-to-br from-emerald-300 dark:from-teal-500 to-lime-200 dark:to-rose-300 w-40 h-40 rounded-full -z-10 transition-all duration-2000">
             </span>
-            <article class=" white-glass px-6 py-4 w-fit rounded-lg">
+            <article class=" white-glass px-6 py-4 w-fit">
                 <h3 class="text-center">{{ t('skills.sub_1_title') }}</h3>
                 <ul class="w-fit">
                     <star-rating v-for="(rating, skill) in ratings" :key="skill" :filled="rating">{{ t(`general.${skill}`) }}</star-rating>

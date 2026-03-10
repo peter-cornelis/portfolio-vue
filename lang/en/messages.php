@@ -106,15 +106,15 @@ return [
     'projects' => [
         'title' => 'Projects',
         'used' => 'Used technologies',
-        'sub_dropzoned_alt' => 'Screenshot of Dropzoned website',
-        'sub_dropzoned_info' =>
+        'sub_drop_alt' => 'Screenshot of Dropzoned website',
+        'sub_drop_info' =>
             'Application enabling seamless file uploads by combining Livewire\'s WithFileUploads traits with a custom-built drag-and-drop interface. Developed with a focus on user experience, validation, and security.',
-        'sub_1_alt' => 'Screenshot of Portfolio 2.0 website',
-        'sub_1_info' =>
+        'sub_portfolio_alt' => 'Screenshot of Portfolio 2.0 website',
+        'sub_portfolio_info' =>
             'Modern portfolio,
             Modern portfolio featuring an AI-powered chatbot that uses the Google Gemini API and Browserless API to compare my skills with those required by a given job vacancy link. Includes a responsive contact form with real-time validation.',
-        'sub_2_alt' => 'Screenshot of stock market game website',
-        'sub_2_info' =>
+        'sub_rally_alt' => 'Screenshot of stock market game website',
+        'sub_rally_info' =>
             'Simple stock market game with daily price and statistics updates through the FMP API.
             AI integration enhances search functionality and provides up-to-date buy or sell recommendations for each stock.',
         'sub_3_alt' => 'Screenshot of video store website',

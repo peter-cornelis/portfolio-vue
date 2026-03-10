@@ -4,6 +4,7 @@
     import skills from "@/sections/Skills.vue";
     import experience from "@/sections/Experience.vue";
     import projects from "@/sections/Projects.vue";
+    import contact from "@/sections/Contact.vue";
 </script>
 <template>
     <Header />
@@ -12,6 +13,7 @@
         <skills />
         <experience />
         <projects />
+        <contact />
     </main>
     <footer>
         <p class="text-center py-4 text-sm opacity-50">© 2026 | Peter Cornelis</p>

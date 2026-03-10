@@ -1,11 +1,11 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { github, techIcons } from "@/components/svgs";
 
 let opened = ref(0);
 const { t } = useI18n();
-const projects = [
+const projects = computed(() => [
     {
         name: "Dropzoned",
         alt: t('projects.sub_drop_alt'),
@@ -30,7 +30,7 @@ const projects = [
         usedTech: [techIcons.html, techIcons.tailwind, techIcons.laravel, techIcons.javascript],
         githubUrl: "https://github.com/peter-cornelis/stock-market-rally"
     },
-];
+]);
 
 function setActiveProject(index) {
     if (opened.value !== index) {
@@ -45,12 +45,13 @@ function setActiveProject(index) {
         <span aria-hidden="true" class="absolute top-100 left-1/3 -translate-x-1/2 bg-linear-to-br from-rose-300 dark:from-rose-400 to-purple-400 w-60 h-60 rounded-full -z-10 transition-all duration-2000">
         </span>
         <h2>{{ t('projects.title') }}</h2>
-        <ul class="shadow-lg shadow-black/5 glass rounded-lg max-w-4xl mx-auto">
+        <ul class="shadow-lg shadow-black/5 glass max-w-4xl mx-auto">
             <li
                 v-for="(project, index) in projects"
                 :key="index"
                 @click="setActiveProject(index)"
-                class="relative p-2 z-${(index + 1) * 10} first:rounded-t-lg last:rounded-b-lg not-last:border-b border-white/5 hover:bg-indigo-700/5 dark:hover:bg-white/2 cursor-pointer transition-colors duration-300"
+                class="relative p-2 z-${(index + 1) * 10} first:rounded-t-lg last:rounded-b-lg not-last:border-b border-white/5 hover:bg-indigo-700/5 dark:hover:bg-white/2 transition-colors duration-300"
+                :class="{'cursor-pointer': opened !== index}"
             >
                 <h4 class="text-center">{{ project.name }}</h4>
                 <div :class="opened === index ? 'p-2 opacity-100 max-h-180' : 'opacity-0 max-h-0'" class="grid md:grid-cols-2 gap-4 transition-max-height duration-700">

@@ -21,17 +21,22 @@ h4 {
 
 /* Classes */
 
+.glass,
+.white-glass {
+    @apply shadow-lg border rounded-lg backdrop-blur-sm transition-colors duration-300;
+}
+
 .glass {
-    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-lg shadow-black/5 border border-white/5 ring-1 ring-black/5 backdrop-blur-sm;
+    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/5 border-white/5 ring-1 ring-black/5;
 }
 
 .white-glass {
-    @apply bg-white/90 dark:text-text shadow-lg border border-indigo-950/5 dark:border-indigo-950/25 backdrop-blur-sm;
+    @apply bg-white/90 dark:text-text border-indigo-950/5 dark:border-indigo-950/25;
 }
 
 .btn-demo,
 .btn-github {
-    @apply h-fit px-4 py-2 rounded-lg bg-linear-to-r text-white font-medium transition-colors duration-300;
+    @apply h-fit px-4 py-2 rounded-lg bg-linear-to-r text-white font-medium cursor-pointer transition-colors duration-300;
 }
 
 .btn-demo {
