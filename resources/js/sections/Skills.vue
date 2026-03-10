@@ -59,8 +59,8 @@ const ratings = {
             <div class="overflow-x-clip">
                 <h4 class="text-2xl text-center">{{ t('skills.carousel_title') }}</h4>
                 <div class="relative flex">
-                    <div class="absolute z-20 left-0 w-16 h-full bg-linear-to-r from-primary dark:from-darkPrimary to-transparent"></div>
-                    <div class="absolute z-20 right-0 w-16 h-full bg-linear-to-l from-primary dark:from-darkPrimary to-transparent"></div>
+                    <div class="absolute z-20 left-0 w-16 h-full bg-linear-to-r from-primary dark:from-darkPrimary to-transparent transition-colors duration-500"></div>
+                    <div class="absolute z-20 right-0 w-16 h-full bg-linear-to-l from-primary dark:from-darkPrimary to-transparent transition-colors duration-500"></div>
                     <ul class="flex gap-16 my-8 mx-auto px-8 w-fit animate-scroll">
                         <li v-for="(component, key) in techIcons" :key="key" class="group w-16">
                             <component :is="component.icon" class="h-12 mx-auto group-hover:scale-125 transition-transform duration-300"/>

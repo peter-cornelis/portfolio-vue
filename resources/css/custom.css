@@ -1,13 +1,14 @@
 /* Elements */
-section {
+section:not(#chat) {
     @apply max-w-7xl mx-auto p-8;
 }
 
-section:not(#about) h2 {
+section:not(#about) h2,
+section:not(#chat) h2 {
     @apply text-center;
 }
 
-h2 {
+section:not(#chat) h2 {
     @apply text-5xl my-8;
 }
 
@@ -25,6 +26,10 @@ label {
     input,
     textarea {
         @apply w-full mt-2;
+    }
+
+    span {
+        @apply text-red-500 text-xs ml-0.5;
     }
 }
 
@@ -47,8 +52,12 @@ textarea,
     @apply border backdrop-blur-sm transition-colors duration-300;
 }
 
+.soft-img {
+    @apply shadow border border-black/5 rounded-lg w-full max-w-md mx-auto self-stretch object-cover;
+}
+
 main .glass,
-.white-glass {
+main .white-glass {
     @apply rounded-lg shadow;
 }
 
@@ -65,16 +74,21 @@ main .glass,
 }
 
 .btn,
-.btn-secondary {
+.btn-secondary,
+.btn-circle {
     @apply h-fit border-y border-t-white/15 border-b-black/10 shadow  bg-linear-to-r text-white font-medium cursor-pointer transition-colors duration-300;
 }
 
 .btn {
-    @apply from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600;
+    @apply from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400;
 }
 
 .btn-secondary {
-    @apply from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600;
+    @apply from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400;
+}
+
+.btn-circle {
+    @apply aspect-square rounded-full from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500;
 }
 
 /* Animations */

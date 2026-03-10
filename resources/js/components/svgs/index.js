@@ -14,6 +14,8 @@ import livewire from "./Livewire.vue";
 import vue from "./Vue.vue";
 import bootstrap from "./Bootstrap.vue";
 import git from "./Git.vue";
+import spinner from "./Spinner.vue";
+import checkmark from "./Checkmark.vue";
 
 
 const techIcons = {
@@ -37,4 +39,6 @@ export {
     darkMode,
     lightMode,
     techIcons,
+    spinner,
+    checkmark,
 };

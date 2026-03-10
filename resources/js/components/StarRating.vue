@@ -16,7 +16,7 @@ defineProps({
                 :class="[
                     size,
                     filled >= i
-                        ? 'fill-yellow-400 dark:fill-yellow-600 print:fill-yellow-600'
+                        ? 'fill-yellow-400 dark:fill-amber-500'
                         : 'opacity-15 not-print:dark:opacity-70'
                 ]"
                 xmlns="http://www.w3.org/2000/svg"

@@ -19,9 +19,9 @@
 </script>
 <template>
     <section id="about" class="relative">
-        <span aria-hidden="true" class="absolute -top-300 -left-100 bg-linear-to-br from-cyan-300 dark:to-cyan-800 to-emerald-200 dark:from-green-500 w-400 h-400 rounded-full -z-10">
+        <span aria-hidden="true" class="absolute -top-300 -left-100 bg-linear-to-br from-cyan-300 dark:to-cyan-800 to-emerald-200 dark:from-green-500 w-400 h-400 rounded-full -z-10 shadow-xl shadow-black/5 dark:shadow-white/5 transition-colors duration-500">
         </span>
-        <span aria-hidden="true" class="absolute -top-200 -left-10 bg-primary dark:bg-darkPrimary w-220 h-220 rounded-full -z-10">
+        <span aria-hidden="true" class="absolute -top-200 -left-10 bg-primary dark:bg-darkPrimary w-220 h-220 rounded-full -z-10 shadow-xl shadow-black/5 dark:shadow-white/10 transition-colors duration-500">
         </span>
         <h2>{{ t('about.hey') }} <br> {{ t('about.hey_2') }}</h2>
         <p class="text-lg">{{ t('about.introduction') }}</p>

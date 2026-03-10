@@ -5,6 +5,7 @@
     import experience from "@/sections/Experience.vue";
     import projects from "@/sections/Projects.vue";
     import contact from "@/sections/Contact.vue";
+    import chat from "@/sections/Chat.vue";
 </script>
 <template>
     <Header />
@@ -14,6 +15,7 @@
         <experience />
         <projects />
         <contact />
+        <chat />
     </main>
     <footer>
         <p class="text-center py-4 text-sm opacity-50">© 2026 | Peter Cornelis</p>

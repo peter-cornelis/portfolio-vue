@@ -11,3 +11,5 @@ Route::get('/', function () {
 });
 
 Route::get('/language/{locale}', [PortfolioController::class, 'toggleLanguage']);
+
+Route::post('/contact', [PortfolioController::class, 'contact']);
