@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <header class="flex sticky z-100 top-0 h-13.5 glass items-center">
+    <header class="flex sticky z-100 top-0 h-13.5 glass items-center shadow-lg">
         <div class="relative grid grid-flow-col items-center justify-between gap-4 max-w-7xl w-full px-4 py-2 mx-auto">
             <h1 class="w-fit text-2xl sm:text-3xl text-shadow-2xs font-bold bg-linear-to-r from-pink-300 to-indigo-400 dark:to-indigo-300 text-transparent bg-clip-text">Peter Cornelis</h1>
             <div class="relative grid grid-flow-col items-center">

@@ -19,31 +19,61 @@ h4 {
     @apply text-lg font-semibold;
 }
 
+label {
+    @apply block mb-4 text-sm gap-1;
+
+    input,
+    textarea {
+        @apply w-full mt-2;
+    }
+}
+
+article,
+form {
+    @apply px-6 py-4;
+}
+
+input,
+textarea,
+.btn,
+.btn-secondary {
+    @apply rounded-md px-2 py-1.5;
+}
+
 /* Classes */
 
 .glass,
 .white-glass {
-    @apply shadow-lg border rounded-lg backdrop-blur-sm transition-colors duration-300;
+    @apply border backdrop-blur-sm transition-colors duration-300;
+}
+
+main .glass,
+.white-glass {
+    @apply rounded-lg shadow;
 }
 
 .glass {
-    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/5 border-white/5 ring-1 ring-black/5;
+    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/20 border-white/5;
+
+    .milky {
+        @apply bg-white/25 dark:bg-white/10 shadow border border-white/10;
+    }
 }
 
 .white-glass {
     @apply bg-white/90 dark:text-text border-indigo-950/5 dark:border-indigo-950/25;
 }
 
-.btn-demo,
-.btn-github {
-    @apply h-fit px-4 py-2 rounded-lg bg-linear-to-r text-white font-medium cursor-pointer transition-colors duration-300;
+.btn,
+.btn-secondary {
+    @apply h-fit border-y border-t-white/15 border-b-black/10 shadow  bg-linear-to-r text-white font-medium cursor-pointer transition-colors duration-300;
 }
 
-.btn-demo {
+.btn {
     @apply from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600;
 }
 
-.btn-github {
+.btn-secondary {
     @apply from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600;
 }
 

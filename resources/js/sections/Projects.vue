@@ -39,7 +39,7 @@ function setActiveProject(index) {
 };
 </script>
 <template>
-    <section id="projects" class="relative overflow-hidden">
+    <section id="projects" class="relative">
         <span aria-hidden="true" class="absolute top-5 left-1/2 -translate-x-1/2 bg-linear-to-bl from-rose-300 dark:from-rose-400 to-purple-300 w-140 h-140 rounded-full -z-10 transition-all duration-2000">
         </span>
         <span aria-hidden="true" class="absolute top-100 left-1/3 -translate-x-1/2 bg-linear-to-br from-rose-300 dark:from-rose-400 to-purple-400 w-60 h-60 rounded-full -z-10 transition-all duration-2000">
@@ -57,17 +57,17 @@ function setActiveProject(index) {
                 <div :class="opened === index ? 'p-2 opacity-100 max-h-180' : 'opacity-0 max-h-0'" class="grid md:grid-cols-2 gap-4 transition-max-height duration-700">
                     <img class="rounded-lg w-full self-stretch object-cover" :src="project.imageUrl" :alt="project.alt">
                     <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="bg-white/15 text-sm rounded-lg p-4 sm:col-span-2">
+                        <div class="milky text-sm rounded-lg p-4 sm:col-span-2">
                             <p>{{ project.description }}</p>
                             <div class="flex gap-4 mx-auto p-1 mt-4 w-fit">
                                 <component v-for="tech in project.usedTech" :key="tech.name" :is="tech.icon" class="w-6" :mono="true"/>
 
                             </div>
                         </div>
-                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-demo text-center mt-auto">
+                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn text-center mt-auto">
                             Live Demo
                         </a>
-                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-github mt-auto">
+                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-auto">
                             <span class="flex items-center gap-2 mx-auto w-fit">
                                 <component :is="github" class="w-6"/>
                                 Code
