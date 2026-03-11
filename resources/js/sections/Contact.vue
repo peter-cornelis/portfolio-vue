@@ -50,7 +50,7 @@ function submit() {
                     {{ t('contact.form.success') }}
                     <checkmark class="inline-block ml-2" />
                 </span>
-                <span v-if="!success && !form.processing" wire:loading.remove>
+                <span v-if="!success && !form.processing">
                     {{ t('contact.form.send') }}
                 </span>
                 <spinner v-if="form.processing" class="mx-auto" />

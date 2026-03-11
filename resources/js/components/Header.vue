@@ -27,12 +27,13 @@
         </div>
     </header>
     <div
-        v-if="!isDesktop"
-        class="sticky z-99 grid sm:grid-flow-col top-13.5 left-0 w-full items-center white-glass whitespace-nowrap overflow-hidden transition-max-height duration-300 ease-in-out"
-        :class="showMobile ? 'opacity-100 max-h-screen' : 'opacity-0 max-h-0'"
-    >
-        <nav class="sm:mx-auto sm:p-1">
-            <ul class="grid sm:grid-flow-col sm:w-fit gap-2">
+        v-show="!isDesktop"
+        class="sticky z-99 top-13.5 left-0 w-full items-center white-glass whitespace-nowrap overflow-clip"
+        :style="showMobile ? '' : 'border-width: 0;'">
+        <nav
+            class="transition-[max-height,opacity] duration-1000 ease-in-out"
+            :class="showMobile ? 'opacity-100 max-h-60' : 'opacity-0 max-h-0'">
+            <ul class="grid sm:grid-flow-col sm:w-fit sm:py-1 gap-2 sm:mx-auto">
                 <nav-link v-for="value in navItems" :key="value" :value="value" :mobile="true" />
             </ul>
         </nav>
