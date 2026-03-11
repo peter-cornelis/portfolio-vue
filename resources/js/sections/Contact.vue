@@ -35,19 +35,19 @@ function submit() {
         <form @submit.prevent="submit" class="glass max-w-xl mx-auto">
             <label for="name">
                 {{ t('contact.form.name') }}
-                <span>{{ form.errors.name ?? '*' }}</span>
+                <span>{{ form.errors.name ? '| ' + t(`${form.errors.name}`) : '*' }}</span>
                 <input type="text" v-model="form.name" id="name" class="milky">
             </label>
 
             <label for="email">
                 {{ t('contact.form.email') }}
-                <span>{{ form.errors.email ?? '*' }}</span>
+                <span>{{ form.errors.email ? '| ' + t(`${form.errors.email}`) : '*' }}</span>
                 <input type="email" v-model="form.email" id="email" class="milky">
             </label>
 
             <label for="message">
                 {{ t('contact.form.message') }}
-                <span>{{ form.errors.message ?? '*' }}</span>
+                <span>{{ form.errors.message ? '| ' + t(`${form.errors.message}`) : '*' }}</span>
                 <textarea v-model="form.message" id="message" class="milky resize-none" rows="8"></textarea>
             </label>
 
