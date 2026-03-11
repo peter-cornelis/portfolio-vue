@@ -24,7 +24,7 @@ label {
 
     input,
     textarea {
-        @apply w-full mt-2;
+        @apply mt-2;
     }
 
     span {
@@ -40,8 +40,9 @@ form {
 input,
 textarea,
 .btn,
-.btn-secondary {
-    @apply rounded-md px-3 py-1.5;
+.btn-secondary,
+.btn-disabled {
+    @apply w-full rounded-md px-3 py-1.5;
 }
 
 /* Classes */
@@ -71,10 +72,10 @@ main .white-glass {
 
 
 .glass {
-    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/10 border-white/5;
+    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/10 border-black/5 dark:border-white/5;
 
     .milky {
-        @apply bg-white/25 dark:bg-white/10 border border-white/10;
+        @apply bg-white/25 dark:bg-white/10 border border-white/10 shadow;
     }
 }
 
@@ -88,16 +89,21 @@ main .white-glass {
 
 .btn,
 .btn-secondary,
-.btn-circle {
-    @apply h-fit border-y border-t-white/15 border-b-black/10 shadow  bg-linear-to-r text-white font-medium cursor-pointer disabled:cursor-not-allowed transition-colors duration-300;
+.btn-circle,
+.btn-disabled {
+    @apply h-fit shadow border-y border-t-white/15 border-b-black/10  bg-linear-to-r text-white font-medium cursor-pointer disabled:cursor-not-allowed transition-colors duration-300;
 }
 
 .btn {
-    @apply from-emerald-500 to-teal-500 not-disabled:hover:from-emerald-400 not-disabled:hover:to-teal-400 disabled:from-gray-300 disabled:to-olive-300;
+    @apply from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400;
 }
 
 .btn-secondary {
-    @apply from-indigo-500 to-purple-500 not-disabled:hover:from-indigo-400 not-disabled:hover:to-purple-400 disabled:from-neutral-300 disabled:to-mauve-300;
+    @apply from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400;
+}
+
+.btn-disabled {
+    @apply from-mauve-300 to-olive-300 text-white/80 dark:from-mauve-500 dark:to-olive-500 dark:text-white/50 cursor-not-allowed;
 }
 
 .btn-circle {

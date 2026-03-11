@@ -8,7 +8,6 @@
     function toggleChat() {
         open.value = !open.value;
     }
-
 </script>
 <template>
     <button @click="toggleChat" class="grid fixed bottom-4 right-4 z-90 items-center justify-center btn-circle w-12 h-12 rounded-full cursor-pointer">
@@ -17,10 +16,7 @@
         </svg>
     </button>
     <Transition name="fade">
-    <div
-        v-if="open"
-        @click="toggleChat"
-        class="fixed z-30 top-13.5 left-0 bg-black/5 w-full h-screen backdrop-blur-2xl"></div>
+        <div v-if="open" @click="toggleChat" class="fixed z-30 top-13.5 left-0 bg-black/5 w-full h-screen backdrop-blur-2xl"></div>
     </Transition>
     <Transition name="chat">
         <section id="chat" v-if="open" class="fixed white-glass pb-2 top-1/2 left-1/2 -translate-1/2 w-full z-30 sm:max-w-lg">

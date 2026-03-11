@@ -54,7 +54,7 @@ function setActiveProject(index) {
                 v-for="(project, index) in projects"
                 :key="index"
                 @click="setActiveProject(index)"
-                class="relative p-2 first:rounded-t-lg last:rounded-b-lg not-last:border-b border-white/5 transition-colors duration-300"
+                class="relative p-2 first:rounded-t-lg last:rounded-b-lg not-last:border-b border-black/5 dark:border-white/5 transition-colors duration-300"
                 :class="{'cursor-pointer hover:bg-indigo-700/5 dark:hover:bg-white/3': opened !== index}"
             >
                 <h3 class="text-center">{{ project.name }}</h3>

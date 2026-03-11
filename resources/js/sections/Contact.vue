@@ -51,7 +51,9 @@ function submit() {
                 <textarea v-model="form.message" id="message" class="milky resize-none" rows="8"></textarea>
             </label>
 
-            <button type="submit" class="w-full" :class="success ? 'btn' : 'btn-secondary'" :disabled="!inputsFilled || form.processing || success">
+            <button type="submit" class="w-full"
+            :class="!inputsFilled && !form.processing && !success ? 'btn-disabled' : success ? 'btn' : 'btn-secondary'"
+            :disabled="!inputsFilled || form.processing || success">
                 <span v-if="success">
                     {{ t('contact.form.success') }}
                     <checkmark class="inline-block ml-2" />
