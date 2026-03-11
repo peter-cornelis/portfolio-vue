@@ -56,7 +56,7 @@ function setActiveProject(index) {
                 :class="{'cursor-pointer hover:bg-indigo-700/5 dark:hover:bg-white/3': opened !== index}"
             >
                 <h3 class="text-center">{{ project.name }}</h3>
-                <Transition name="project">
+                <transition name="project">
                 <div v-if="opened === index"><!-- extra container resolve transition glitch by padding-->
                     <div class="grid md:grid-cols-2 gap-4 p-2">
                         <img class="soft-img" :src="project.imageUrl" :alt="project.alt">
@@ -79,7 +79,7 @@ function setActiveProject(index) {
                         </div>
                     </div>
                 </div>
-                </Transition>
+                </transition>
             </li>
         </ul>
     </section>
