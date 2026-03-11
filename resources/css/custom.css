@@ -53,7 +53,7 @@ textarea,
 
 .glass,
 .white-glass {
-    @apply border backdrop-blur-sm transition-colors duration-300;
+    @apply border backdrop-blur-md transition-colors duration-300;
 }
 
 .soft-img {
@@ -103,7 +103,7 @@ main .white-glass {
 }
 
 .btn-disabled {
-    @apply from-mauve-300 to-olive-300 text-white/80 dark:from-mauve-500 dark:to-olive-500 dark:text-white/50 cursor-not-allowed;
+    @apply from-mauve-300 to-olive-300 text-white/80 dark:from-mauve-500 dark:to-taupe-500 dark:text-white/50 cursor-not-allowed;
 }
 
 .btn-circle {

@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref, computed } from "vue";
+import { ref, computed, Transition } from "vue";
 import { github, techIcons } from "@/components/svgs";
 
 let opened = ref(0);
@@ -37,9 +37,7 @@ const projects = computed(() => [
 ]);
 
 function setActiveProject(index) {
-    if (opened.value !== index) {
-        opened.value = index;
-    }
+    if (opened.value !== index) opened.value = index;
 };
 </script>
 <template>
@@ -58,28 +56,52 @@ function setActiveProject(index) {
                 :class="{'cursor-pointer hover:bg-indigo-700/5 dark:hover:bg-white/3': opened !== index}"
             >
                 <h3 class="text-center">{{ project.name }}</h3>
-                <div :class="opened === index ? 'p-2 opacity-100 max-h-180' : 'opacity-0 max-h-0'" class="grid md:grid-cols-2 gap-4 transition-max-height duration-700">
-                    <img class="soft-img" :src="project.imageUrl" :alt="project.alt">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="milky text-sm rounded-lg p-4 mb-auto sm:col-span-2">
-                            <p>{{ project.description }}</p>
-                            <div class="flex gap-4 mx-auto p-1 mt-4 w-fit">
-                                <component v-for="tech in project.usedTech" :key="tech.name" :is="tech.icon" class="w-6" :mono="true"/>
-
+                <Transition name="project">
+                <div v-if="opened === index"><!-- extra container resolve transition glitch by padding-->
+                    <div class="grid md:grid-cols-2 gap-4 p-2">
+                        <img class="soft-img" :src="project.imageUrl" :alt="project.alt">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="milky text-sm rounded-lg p-4 mb-auto sm:col-span-2">
+                                <p>{{ project.description }}</p>
+                                <div class="flex gap-4 mx-auto p-1 mt-4 w-fit">
+                                    <component v-for="tech in project.usedTech" :key="tech.name" :is="tech.icon" class="w-6" :mono="true"/>
+                                </div>
                             </div>
+                            <a :href="project.demoUrl" target="_blank" rel="noopener noreferrer" class="btn text-center mt-auto">
+                                Live Demo
+                            </a>
+                            <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-auto">
+                                <span class="flex items-center gap-2 mx-auto w-fit">
+                                    <component :is="github" class="w-6"/>
+                                    Code
+                                </span>
+                            </a>
                         </div>
-                        <a :href="project.demoUrl" target="_blank" rel="noopener noreferrer" class="btn text-center mt-auto">
-                            Live Demo
-                        </a>
-                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-auto">
-                            <span class="flex items-center gap-2 mx-auto w-fit">
-                                <component :is="github" class="w-6"/>
-                                Code
-                            </span>
-                        </a>
                     </div>
                 </div>
+                </Transition>
             </li>
         </ul>
     </section>
 </template>
+<style scoped>
+    .project-enter-active {
+        transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+        overflow: clip;
+    }
+
+    .project-leave-active {
+        transition: max-height 0.6s, opacity 0.6s;
+        overflow: clip;
+    }
+
+    .project-enter-from, .project-leave-to {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .project-enter-to, .project-leave-from {
+        max-height: 40rem;
+        opacity: 1;
+    }
+</style>

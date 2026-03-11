@@ -23,9 +23,9 @@
             <button class="close top-6 right-6" @click="toggleChat">&#x2715;</button>
             <h2 class="text-3xl px-6 mt-6 text-left">{{t('chat.title')}}</h2>
             <form action="" class="grid gap-4">
-                <div class="contrastic rounded-md">
-                    <div class="max-h-[calc(100vh-19rem)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/40 overflow-y-auto">
-                        <div class="p-3">
+                <div class="contrastic rounded-md p-1">
+                    <div class="max-h-[calc(100vh-19rem)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-xs [&::-webkit-scrollbar-thumb]:bg-white/40 overflow-y-auto">
+                        <div class="p-2">
                             {{t('chat.introduction')}} <br>
                             {{ t('chat.q_title')}}
                             <ul class="list-disc text-sm ml-8">
