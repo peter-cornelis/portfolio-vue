@@ -17,9 +17,11 @@
     const { toggleMenu } = useMenu();
 </script>
 <template>
-    <li
+    <!--div component required for the menu toggle (single element)-->
+    <component
+        :is="toggleType === 'menu' ? 'div' : 'li'"
         class="group relative overflow-hidden sm:rounded-full"
-        :class="{'rounded-full': toggleType }"
+        :class="{'rounded-full': toggleType, 'first:max-sm:mt-2': !toggleType }"
         @mouseenter="setPosition($event)"
         @mouseleave="setPosition($event)"
     >
@@ -31,12 +33,12 @@
         <button
             v-if="toggleType === 'menu'"
             @click.stop="toggleMenu"
-            class="relative z-10 px-3 py-2 text-sm"
+            class="relative z-10 px-3 py-2 text-sm font-semibold"
         >Menu</button>
         <span
             class="absolute w-96 max-sm:w-7xl h-48 rounded-full bg-violet-800/7 -translate-x-1/2 -translate-y-1/2 scale-0 group-hover:scale-100 transition-transform duration-700"
             :class="{'dark:bg-violet-200/9': !mobile || toggleType }"
             :style="{ left: position.x + 'px', top: position.y + 'px' }"
         ></span>
-    </li>
+    </component>
 </template>

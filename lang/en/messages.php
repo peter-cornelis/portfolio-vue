@@ -73,6 +73,7 @@ return [
         'ask' => 'Ask a question',
         'submit' => 'Ask',
         'failed' => 'Unfortunately at the moment I can only tell you that Peter\'s daily AI limit has been reached, try again later.',
+        'placeholder' => 'Type your question here...'
     ],
     'skills' => [
         'title' => 'Skills',
@@ -83,7 +84,7 @@ return [
         'sub_3_info' => 'Setbacks are moments of growth, I persevere through them with dedication so that I can reap the reward later.',
         'sub_4_title' => 'Flexible',
         'sub_4_info' => 'If needed I enjoy standing in for colleagues. A 9-to-5 mentality is not in my dictionary.',
-        'sub_5_title' => 'Talenkennis',
+        'sub_5_title' => 'Language skills',
         'sub_5_nl' => 'Dutch',
         'sub_5_nl_state' => 'native',
         'sub_5_eng' => 'English',

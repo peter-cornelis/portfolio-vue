@@ -70,6 +70,7 @@ return [
         'ask' => 'Stel een vraag',
         'submit' => 'Vraag',
         'failed' => 'Helaas kan ik u momenteel enkel vertellen dat Peter zijn dagelijks AI limiet is bereikt, probeer het later opnieuw.',
+        'placeholder' => 'Typ hier je vraag...'
     ],
     'skills' => [
         'title' => 'Vaardigheden',

@@ -18,6 +18,6 @@
         <chat />
     </main>
     <footer>
-        <p class="text-center py-4 text-sm opacity-50">© 2026 | Peter Cornelis</p>
+        <p class="text-center py-4 text-sm opacity-70">© 2026 | Peter Cornelis</p>
     </footer>
 </template>

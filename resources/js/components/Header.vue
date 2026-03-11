@@ -19,7 +19,7 @@
                     </ul>
                 </nav>
                 <nav-link v-else toggle-type="menu" :mobile="true" />
-                <ul class="grid grid-flow-col gap-2 ml-2 pl-2 border-l border-black/20 dark:border-white/20">
+                <ul class="grid grid-flow-col gap-2 ml-2 pl-2 border-l border-black/20 dark:border-white/20 items-center">
                     <nav-link toggle-type="lang" />
                     <nav-link toggle-type="theme" />
                 </ul>

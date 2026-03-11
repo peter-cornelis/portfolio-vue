@@ -42,7 +42,7 @@ input,
 textarea,
 .btn,
 .btn-secondary {
-    @apply rounded-md px-2 py-1.5;
+    @apply rounded-md px-3 py-1.5;
 }
 
 /* Classes */
@@ -58,19 +58,29 @@ textarea,
 
 main .glass,
 main .white-glass {
-    @apply rounded-lg shadow;
+    @apply shadow rounded-lg;
 }
 
+#chat {
+    @apply rounded-none sm:rounded-lg;
+}
+
+
+
 .glass {
-    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/20 border-white/5;
+    @apply bg-violet-950/2 dark:bg-violet-950/12 shadow-black/10 border-white/5;
 
     .milky {
-        @apply bg-white/25 dark:bg-white/10 shadow border border-white/10;
+        @apply bg-white/25 dark:bg-white/10 border border-white/10;
     }
 }
 
 .white-glass {
     @apply bg-white/90 dark:text-text border-indigo-950/5 dark:border-indigo-950/25;
+
+    .contrastic {
+        @apply bg-darkPrimary/85 text-darkText shadow border border-white/40;
+    }
 }
 
 .btn,

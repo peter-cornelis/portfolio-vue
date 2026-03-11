@@ -12,7 +12,8 @@ const projects = computed(() => [
         description: t('projects.sub_drop_info'),
         imageUrl: new URL('../../images/dropzoned.webp', import.meta.url).href,
         usedTech: [techIcons.html, techIcons.css, techIcons.laravel, techIcons.alpine, techIcons.livewire],
-        githubUrl: "https://github.com/peter-cornelis/dropzoned"
+        githubUrl: "https://github.com/peter-cornelis/dropzoned",
+        demoUrl: "https://drop.petercornelis.be"
     },
     {
         name: "Portfolio",
@@ -20,7 +21,8 @@ const projects = computed(() => [
         description: t('projects.sub_portfolio_info'),
         imageUrl: new URL('../../images/portfolio.webp', import.meta.url).href,
         usedTech: [techIcons.html, techIcons.tailwind, techIcons.laravel, techIcons.alpine, techIcons.livewire],
-        githubUrl: "https://github.com/peter-cornelis/portfolio"
+        githubUrl: "https://github.com/peter-cornelis/portfolio",
+        demoUrl: "https://dev.petercornelis.be"
     },
     {
         name: "Stock Market Rally",
@@ -28,7 +30,9 @@ const projects = computed(() => [
         description: t('projects.sub_rally_info'),
         imageUrl: new URL('../../images/rally.webp', import.meta.url).href,
         usedTech: [techIcons.html, techIcons.tailwind, techIcons.laravel, techIcons.javascript],
-        githubUrl: "https://github.com/peter-cornelis/stock-market-rally"
+        githubUrl: "https://github.com/peter-cornelis/stock-market-rally",
+        demoUrl: "https://rally.petercornelis.be"
+
     },
 ]);
 
@@ -53,7 +57,7 @@ function setActiveProject(index) {
                 class="relative p-2 first:rounded-t-lg last:rounded-b-lg not-last:border-b border-white/5 transition-colors duration-300"
                 :class="{'cursor-pointer hover:bg-indigo-700/5 dark:hover:bg-white/3': opened !== index}"
             >
-                <h4 class="text-center">{{ project.name }}</h4>
+                <h3 class="text-center">{{ project.name }}</h3>
                 <div :class="opened === index ? 'p-2 opacity-100 max-h-180' : 'opacity-0 max-h-0'" class="grid md:grid-cols-2 gap-4 transition-max-height duration-700">
                     <img class="soft-img" :src="project.imageUrl" :alt="project.alt">
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -64,7 +68,7 @@ function setActiveProject(index) {
 
                             </div>
                         </div>
-                        <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn text-center mt-auto">
+                        <a :href="project.demoUrl" target="_blank" rel="noopener noreferrer" class="btn text-center mt-auto">
                             Live Demo
                         </a>
                         <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-auto">
