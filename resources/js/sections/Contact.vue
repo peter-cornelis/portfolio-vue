@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import { useForm } from '@inertiajs/vue3';
 import { checkmark, spinner } from '@/components/svgs';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const { t } = useI18n();
 const success = ref(false);
@@ -11,6 +11,12 @@ const form = useForm({
     email: '',
     message: ''
 });
+
+const inputsFilled = computed(() =>
+    form.name.trim().length > 0 &&
+    form.email.trim().length > 0 &&
+    form.message.trim().length > 0
+);
 
 function submit() {
     form.post('/contact', {
@@ -45,7 +51,7 @@ function submit() {
                 <textarea v-model="form.message" id="message" class="milky resize-none" rows="8"></textarea>
             </label>
 
-            <button type="submit" class="w-full" :class="success ? 'btn' : 'btn-secondary'">
+            <button type="submit" class="w-full" :class="success ? 'btn' : 'btn-secondary'" :disabled="!inputsFilled || form.processing || success">
                 <span v-if="success">
                     {{ t('contact.form.success') }}
                     <checkmark class="inline-block ml-2" />

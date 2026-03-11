@@ -76,19 +76,19 @@ main .white-glass {
 .btn,
 .btn-secondary,
 .btn-circle {
-    @apply h-fit border-y border-t-white/15 border-b-black/10 shadow  bg-linear-to-r text-white font-medium cursor-pointer transition-colors duration-300;
+    @apply h-fit border-y border-t-white/15 border-b-black/10 shadow  bg-linear-to-r text-white disabled:opacity-70 font-medium cursor-pointer disabled:cursor-not-allowed transition-colors duration-300;
 }
 
 .btn {
-    @apply from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400;
+    @apply from-emerald-500 to-teal-500 not-disabled:hover:from-emerald-400 not-disabled:hover:to-teal-400;
 }
 
 .btn-secondary {
-    @apply from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400;
+    @apply from-indigo-500 to-purple-500 not-disabled:hover:from-indigo-400 not-disabled:hover:to-purple-400;
 }
 
 .btn-circle {
-    @apply aspect-square rounded-full from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500;
+    @apply aspect-square rounded-full from-purple-600 to-pink-600 not-disabled:hover:from-purple-500 not-disabled:hover:to-pink-500;
 }
 
 /* Animations */
