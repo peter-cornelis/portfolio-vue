@@ -16,7 +16,7 @@ h3 {
 }
 
 h4 {
-    @apply text-lg font-semibold;
+    @apply text-sm text-center font-semibold;
 }
 
 label {
@@ -46,14 +46,13 @@ textarea,
 }
 
 /* Classes */
-
-.close {
-    @apply absolute hover:text-pink-700 font-bold transition-colors duration-500;
-}
-
 .glass,
 .white-glass {
-    @apply border backdrop-blur-md transition-colors duration-300;
+    @apply border backdrop-blur-lg transition-colors duration-300;
+
+    &#chatNotice {
+        @apply absolute bottom-10.5 right-8.5 rounded-2xl rounded-br-none p-4 text-xs w-38;
+    }
 }
 
 .soft-img {
@@ -67,6 +66,10 @@ main .white-glass {
 
 #chat {
     @apply rounded-none sm:rounded-lg;
+}
+
+.close {
+    @apply flex absolute bg-pink-700 hover:bg-pink-600 text-white font-bold text-xs aspect-square w-6 h-6 hover:scale-110 rounded-full items-center justify-center border border-white/15 cursor-pointer transition-[colors,scale] duration-500;
 }
 
 
@@ -114,4 +117,24 @@ main .white-glass {
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%) }
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(4px, 2px, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(2px, -2px, 0);
+    }
 }

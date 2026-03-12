@@ -66,7 +66,7 @@ return [
     'chat' => [
         'title' => 'Ai Chat',
         'introduction' => 'Hey, i\'m here to answer all your professional questions about Peter.',
-        'bouncer' => 'Hey, I can tell you more about Peter!',
+        'notice' => 'Hey, I can tell you more about Peter!',
         'q_title' => 'Some of the questions you can ask me:',
         'q_1' => 'Would Peter be a good candidate for this job vacancy (link job vacancy)?',
         'q_2' => 'When can Peter start?',

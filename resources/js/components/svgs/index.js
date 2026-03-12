@@ -16,6 +16,8 @@ import bootstrap from "./Bootstrap.vue";
 import git from "./Git.vue";
 import spinner from "./Spinner.vue";
 import checkmark from "./Checkmark.vue";
+import school from "./School.vue";
+import work from "./Work.vue";
 
 
 const techIcons = {
@@ -41,4 +43,6 @@ export {
     techIcons,
     spinner,
     checkmark,
+    school,
+    work
 };
