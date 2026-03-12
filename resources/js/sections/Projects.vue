@@ -63,7 +63,10 @@ function setActiveProject(index) {
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div class="milky text-sm rounded-lg p-4 mb-auto sm:col-span-2">
                                 <p>{{ project.description }}</p>
-                                <div class="flex gap-4 mx-auto p-1 mt-4 w-fit">
+                                <div>
+                                    <h4 class="mt-4">{{ t('projects.used') }}:</h4>
+                                </div>
+                                <div class="flex gap-4 mx-auto p-1 mt-2 w-fit">
                                     <component v-for="tech in project.usedTech" :key="tech.name" :is="tech.icon" class="w-6" :mono="true"/>
                                 </div>
                             </div>

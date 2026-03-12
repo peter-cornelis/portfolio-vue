@@ -8,7 +8,7 @@
     <section id="experience">
         <h2>{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
-            <ol class="relative w-fit ml-8 border-l border-black/20 dark:border-white/20 print:hidden">
+            <ol class="relative w-fit ml-8 pb-4 mb-28 border-l border-black/20 dark:border-white/40 print:hidden">
                 <timeline-item start="2025" :end="`${t('experience.present')}`" at="vdab">
                     {{ t('experience.sub_1_title') }}
                 </timeline-item>
