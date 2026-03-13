@@ -3,7 +3,7 @@
     import { useForm, usePage } from '@inertiajs/vue3';
     import { spinner } from '@/components/svgs';
     import { useShaker } from "@/composables/useShaker";
-    import { ref, computed } from "vue";
+    import { ref, computed, onUnmounted } from "vue";
 
     const { t } = useI18n();
     const open = ref(false);
@@ -70,7 +70,6 @@
             <form @submit.prevent="submit" class="grid gap-4">
                 <div class="contrastic rounded-md p-1">
                     <div class="max-h-[calc(100vh-19rem)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-xs [&::-webkit-scrollbar-thumb]:bg-white/40 overflow-y-auto">
-                        <!-- TODO: use https://www.npmjs.com/package/vue-dompurify-html to sanitize HTML content -->
                         <p v-if="answer" class="p-2" v-html="answer"></p>
                         <div v-else class="p-2">
                             {{t('chat.introduction')}} <br>

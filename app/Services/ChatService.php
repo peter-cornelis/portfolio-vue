@@ -57,7 +57,8 @@ class ChatService
             ->generateContent($question)
             ->text();
 
-            $answer = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" class="underline">$1</a>', $answer);
+            $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
+            $answer = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
         return $answer;
     }
 }

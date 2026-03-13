@@ -55,10 +55,7 @@ class PortfolioController extends Controller
         return redirect()->back();
     }
 
-    public $question ='';
-    public $answer = '';
-
-    public function chat(Request $request)
+    public function chat(Request $request, ChatService $chatService)
     {
         $validated = $request->validate([
             'question' => 'required|string|min:10|max:500',
@@ -72,23 +69,21 @@ class PortfolioController extends Controller
             'question' => $validated['question'],
         ]);
 
-        $chatService = new ChatService();
-
-        $this->question = $chatService->addJobVacanciesData($validated['question']);
+        $question = $chatService->addJobVacanciesData($validated['question']);
         try {
-            $this->answer = $chatService->getGeminiAnswer($this->question);
+            $answer = $chatService->getGeminiAnswer($question);
             Log::info('AI Chat response generated', [
-                'answer_length' => strlen($this->answer)
+                'answer_length' => strlen($answer)
             ]);
 
         } catch(\Exception $e) {
             Log::error('AI Chat failed', [
-                'question' => $this->question,
+                'question' => $question,
                 'error' => $e->getMessage(),
             ]);
 
-            $this->answer = __('messages.chat.failed');
+            $answer = __('messages.chat.failed');
         }
-        return redirect()->back()->with('answer', $this->answer);
+        return redirect()->back()->with('answer', $answer);
     }
 }

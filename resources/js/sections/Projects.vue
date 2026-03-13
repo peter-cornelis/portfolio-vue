@@ -1,9 +1,9 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref, computed, Transition } from "vue";
+import { ref, computed } from "vue";
 import { github, techIcons } from "@/components/svgs";
 
-let opened = ref(0);
+const opened = ref(0);
 const { t } = useI18n();
 const projects = computed(() => [
     {
