@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 use App\Mail\ContactFormMail;
 use App\Mail\ContactFormConfirmation;
 use Illuminate\Support\Facades\Mail;
+use Inertia\Inertia;
+use App\Services\ChatService;
+use Illuminate\Support\Facades\Log;
 
 class PortfolioController extends Controller
 {
     public function index()
     {
-        return view('app');
+        return Inertia::render('Home', [
+            'appName' => config('app.name'),
+        ]);
     }
 
     public function toggleLanguage(string $locale)
@@ -48,5 +53,42 @@ class PortfolioController extends Controller
         ->send(new ContactFormConfirmation($validated));
 
         return redirect()->back();
+    }
+
+    public $question ='';
+    public $answer = '';
+
+    public function chat(Request $request)
+    {
+        $validated = $request->validate([
+            'question' => 'required|string|min:10|max:500',
+        ],[
+            'question.required' => 'error.question_required',
+            'question.string' => 'error.question_string',
+            'question.min' => 'error.question_min',
+            'question.max' => 'error.question_max',
+        ]);
+        Log::info('AI Chat request made', [
+            'question' => $validated['question'],
+        ]);
+
+        $chatService = new ChatService();
+
+        $this->question = $chatService->addJobVacanciesData($validated['question']);
+        try {
+            $this->answer = $chatService->getGeminiAnswer($this->question);
+            Log::info('AI Chat response generated', [
+                'answer_length' => strlen($this->answer)
+            ]);
+
+        } catch(\Exception $e) {
+            Log::error('AI Chat failed', [
+                'question' => $this->question,
+                'error' => $e->getMessage(),
+            ]);
+
+            $this->answer = __('messages.chat.failed');
+        }
+        return redirect()->back()->with('answer', $this->answer);
     }
 }

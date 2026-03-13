@@ -19,8 +19,12 @@ h4 {
     @apply text-center font-semibold;
 }
 
+#contact label {
+    @apply mb-4;
+}
+
 label {
-    @apply block mb-4 text-sm gap-1;
+    @apply block text-sm gap-1;
 
     input,
     textarea {

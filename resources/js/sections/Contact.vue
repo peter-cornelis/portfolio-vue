@@ -2,11 +2,12 @@
 import { useI18n } from "vue-i18n";
 import { useForm } from '@inertiajs/vue3';
 import { checkmark, spinner } from '@/components/svgs';
+import { useShaker } from "@/composables/useShaker";
 import { ref, computed } from 'vue';
 
 const { t } = useI18n();
 const success = ref(false);
-const shake = ref(false);
+const { shake, shaker } = useShaker();
 const form = useForm({
     name: '',
     email: '',
@@ -30,12 +31,6 @@ function submit() {
     });
 }
 
-function Shaker() {
-    if (!inputsFilled.value) {
-        shake.value = true;
-        setTimeout(() => shake.value = false, 500);
-    }
-}
 </script>
 <template>
     <section id="contact">
@@ -59,7 +54,7 @@ function Shaker() {
                 <textarea v-model="form.message" id="message" class="milky resize-none" :class="{ 'animate-shake': shake }" rows="8"></textarea>
             </label>
             <div class="relative">
-                <div @click="Shaker" class="absolute w-full h-full cursor-not-allowed" :class="{ 'z-20': !inputsFilled  }"></div>
+                <div @click="shaker(inputsFilled)" class="absolute w-full h-full cursor-not-allowed" :class="{ 'z-20': !inputsFilled  }"></div>
                 <button type="submit" class="relative w-full"
                     :class="!inputsFilled && !form.processing && !success ? 'btn-disabled' : success ? 'btn' : 'btn-secondary'"
                     :disabled="!inputsFilled || form.processing || success">
