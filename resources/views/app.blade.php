@@ -3,8 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Peter Cornelis - Full-Stack PHP Developer specializing in modern web development.">
+        <meta name="keywords" content="Peter Cornelis, PHP Developer, Full-Stack Developer, Web Development, HTML, CSS, MySQL, Laravel, Tailwind CSS, Vue.js, Livewire, Alpine.js, Bootstrap, SQLite">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <link rel="icon" href="/favicon.svg" sizes="any">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
