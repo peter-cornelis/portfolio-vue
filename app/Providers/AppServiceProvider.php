@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
                 app()->getLocale() => trans('messages'),
                 app()->getLocale() === 'en' ? 'nl' : 'en' => trans('messages', [], app()->getLocale() === 'en' ? 'nl' : 'en'),
             ],
+            'contact' => fn () => config('app.contact'),
         ]);
     }
 }

@@ -59,6 +59,9 @@ return [
         'introduction' =>
             'Full-stack PHP-ontwikkelaar met een passie voor elegante code en innovatieve oplossingen. Van kinds af aan gefascineerd door technologie, zet ik die drive nu in om uitdagende projecten tot leven te brengen.
             Problemen oplossen en nieuwe dingen leren, daar word ik enthousiast van. Die mindset neem ik mee in elk project. Verder mag ik me ook fiere vader noemen van twee jonge spruiten.',
+        'print_introduction' =>
+            'Full-stack PHP-ontwikkelaar met een passie voor elegante code en innovatieve oplossingen. Van kinds af aan gefascineerd door technologie, zet ik die drive nu in om uitdagende projecten tot leven te brengen.
+            Problemen oplossen en nieuwe dingen leren, daar word ik enthousiast van. Die mindset neem ik mee in elk project. Neem gerust een kijkje op mijn portfolio website of Github profiel. Verder mag ik me ook fiere vader noemen van twee jonge spruiten.',
     ],
     'chat' => [
         'title' => 'Ai Chat',
@@ -74,7 +77,7 @@ return [
     ],
     'skills' => [
         'title' => 'Vaardigheden',
-        'sub_1_title' => 'Computer Vaardigheden',
+        'sub_1_title' => 'Ervaring met',
         'sub_2_title' => 'Kwaliteitsgericht',
         'sub_2_info' => 'Werk afleveren om trots op te zijn, daar streef ik elke dag voor.',
         'sub_3_title' => 'Veerkracht',
@@ -137,6 +140,7 @@ return [
         'street' => 'Honoré Borgerstraat 16',
         'city' => '8400 Oostende',
         'country' => 'BELGIË',
+        'drive' => 'Rijbewijs B',
         'form' => [
             'name' => 'Naam',
             'email' => 'E-mailadres',

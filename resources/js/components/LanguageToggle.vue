@@ -1,4 +1,5 @@
 <script setup>
+// TODO: Refactor to use Inertia form (post) and validation for better error handling
     import { useI18n } from "vue-i18n";
     import { ref } from "vue";
 

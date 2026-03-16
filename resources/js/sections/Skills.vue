@@ -2,15 +2,9 @@
 import { useI18n } from "vue-i18n";
 import StarRating from "@/components/StarRating.vue";
 import { techIcons } from "@/components/svgs";
+import { ratings } from "@/data/ratings.js";
 
 const { t } = useI18n();
-const ratings = {
-    html: 3,
-    css: 3,
-    mysql: 2,
-    javascript: 4,
-    php: 4
-};
 </script>
 <template>
     <section id="skills">

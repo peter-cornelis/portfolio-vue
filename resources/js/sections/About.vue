@@ -27,10 +27,14 @@
         <p class="text-lg">{{ t('about.introduction') }}</p>
         <ul class="grid grid-flow-col gap-8 w-fit mt-8 items-center">
             <li>
-                <github class="w-8 cursor-pointer"/>
+                <a href="https://github.com/peter-cornelis" target="_blank" rel="noopener noreferrer" :title="t('general.github_profile')">
+                    <github class="w-8 cursor-pointer"/>
+                </a>
             </li>
             <li>
-                <linked-in class="w-8 cursor-pointer"/>
+                <a href="https://www.linkedin.com/in/peter-cornelis-dev/" target="_blank" rel="noopener noreferrer" :title="t('general.linkedin_profile')">
+                    <linked-in class="w-8 cursor-pointer"/>
+                </a>
             </li>
             <li class="rounded-sm bg-darkPrimary/60 dark:bg-primary/70 text-primary dark:text-text text-sm font-semibold cursor-pointer">
                 <button class="relative flex items-center gap-1 cursor-pointer" @mouseover="hover = true" @mouseleave="hover = false">

@@ -62,6 +62,9 @@ return [
         'introduction' =>
             'Full-stack PHP developer with a passion for elegant code and innovative solutions. Fascinated by technology since childhood, I now channel that drive into bringing challenging projects to life.
             Solving problems and learning new things is what excites me. I bring that mindset to every project. Furthermore, I\'m also the proud father of two little rascals.',
+        'print_introduction' =>
+            'Full-stack PHP developer with a passion for elegant code and innovative solutions. Fascinated by technology since childhood, I now channel that drive into bringing challenging projects to life.
+            Solving problems and learning new things is what excites me. I bring that mindset to every project. Feel free to take a look at my portfolio website or Github profile. Furthermore, I\'m also the proud father of two little rascals.',
     ],
     'chat' => [
         'title' => 'Ai Chat',
@@ -77,7 +80,7 @@ return [
     ],
     'skills' => [
         'title' => 'Skills',
-        'sub_1_title' => 'Computer skills',
+        'sub_1_title' => 'Technical expertise',
         'sub_2_title' => 'Quality-oriented',
         'sub_2_info' => 'Delivering work where I can be proud of, is my daily goal.',
         'sub_3_title' => 'Resilient',

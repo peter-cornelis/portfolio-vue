@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-    <li class="grid grid-cols-2 py-2 items-center gap-4">
+    <li class="grid grid-cols-[1fr_auto] py-2 items-center gap-8">
         <slot />
         <div class="flex items-center gap-4">
             <svg

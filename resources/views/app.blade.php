@@ -20,7 +20,7 @@
         @inertiaHead
 
     </head>
-    <body class="min-h-screen min-w-95 dark:bg-darkPrimary dark:text-darkText bg-primary text-text transition-colors duration-500">
+    <body class="min-h-screen min-w-95 dark:bg-darkPrimary dark:text-darkText bg-primary text-text print:bg-white print:text-text transition-colors duration-500">
         @inertia
     </body>
 </html>

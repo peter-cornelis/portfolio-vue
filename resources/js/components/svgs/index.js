@@ -18,21 +18,26 @@ import spinner from "./Spinner.vue";
 import checkmark from "./Checkmark.vue";
 import school from "./School.vue";
 import work from "./Work.vue";
+import house from "./House.vue";
+import phone from "./Phone.vue";
+import mail from "./Mail.vue";
+import car from "./Car.vue";
+import linked from "./Link.vue";
 
 
 const techIcons = {
-    html: {icon: html, name: 'HTML'},
-    css: {icon: css, name: 'CSS'},
-    javascript: {icon: javascript, name: 'JavaScript'},
-    mysql: {icon: mysql, name: 'MySQL'},
-    php: {icon: php, name: 'PHP'},
-    laravel: {icon: laravel, name: 'Laravel'},
-    tailwind: {icon: tailwind, name: 'Tailwind'},
-    vue: {icon: vue, name: 'Vue.js'},
-    git: {icon: git, name: 'Git'},
-    alpine: {icon: alpine, name: 'Alpine.js'},
-    livewire: {icon: livewire, name: 'Livewire'},
-    bootstrap: {icon: bootstrap, name: 'Bootstrap'},
+    html: {icon: html, name: 'HTML', color: 'bg-orange-300', type: 'frontend'},
+    css: {icon: css, name: 'CSS', color: 'bg-blue-300', type: 'frontend'},
+    javascript: {icon: javascript, name: 'JavaScript', color: 'bg-yellow-300', type: 'frontend'},
+    mysql: {icon: mysql, name: 'MySQL', color: 'bg-green-300', type: 'backend'},
+    php: {icon: php, name: 'PHP', color: 'bg-violet-300', type: 'backend'},
+    laravel: {icon: laravel, name: 'Laravel', color: 'bg-red-300', type: 'backend'},
+    tailwind: {icon: tailwind, name: 'Tailwind', color: 'bg-sky-300', type: 'frontend'},
+    vue: {icon: vue, name: 'Vue.js', color: 'bg-green-300', type: 'frontend'},
+    git: {icon: git, name: 'Git', color: 'bg-orange-300', type: 'tool'},
+    alpine: {icon: alpine, name: 'Alpine.js', color: 'bg-gray-300', type: 'frontend'},
+    livewire: {icon: livewire, name: 'Livewire', color: 'bg-pink-300', type: 'backend'},
+    bootstrap: {icon: bootstrap, name: 'Bootstrap', color: 'bg-purple-300', type: 'frontend'},
 };
 
 export {
@@ -44,5 +49,10 @@ export {
     spinner,
     checkmark,
     school,
-    work
+    work,
+    house,
+    phone,
+    mail,
+    car,
+    linked,
 };
