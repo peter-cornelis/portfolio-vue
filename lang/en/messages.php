@@ -20,7 +20,7 @@ return [
         'toggle_light' => 'Use light theme',
         'close_menu' => 'Close menu',
         'linkedin_profile' => 'Peter\'s LinkedIn profile',
-        'github_profile' => 'Peter\'sGithub profile',
+        'github_profile' => 'Peter\'s Github profile',
         'github_repo' => 'Link to github repository',
         'download_cv' => 'Download Curriculum Vitae',
         'cv' => 'Curriculum Vitae',

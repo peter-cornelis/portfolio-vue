@@ -2,7 +2,6 @@
     import { github, linkedIn } from "@/components/svgs";
     import ResumeLink from "@/components/ResumeLink.vue";
     import { useI18n } from "vue-i18n";
-    import { ref, watch } from "vue";
 
     const { t } = useI18n();
 </script>

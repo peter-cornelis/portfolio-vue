@@ -12,6 +12,7 @@ class ChatService
     {
         preg_match_all('/https?:\/\/[^\s"]+/i', $question, $matches);
         $urls = $matches[0];
+        $urls = array_filter($urls, fn($url) => str_starts_with($url, 'https://'));
         $urls = array_slice($urls, 0, 1); // always allow only the first URL
 
         if (!empty($urls)) {

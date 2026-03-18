@@ -34,19 +34,19 @@
     }
 
     function submit() {
-    form.post('/chat', {
-        preserveScroll: true,
-        onSuccess: () => {
-            form.reset();
-            answer.value = page.props.answer ?? null;
-        }
-    });
+        form.post('/chat', {
+            preserveScroll: true,
+            onSuccess: () => {
+                form.reset();
+                answer.value = page.props.answer ?? null;
+            }
+        });
+    }
 
     onUnmounted(() => {
         clearTimeout(noticeTimeout);
         clearInterval(shakeInterval);
     });
-}
 </script>
 <template>
     <div class="fixed bottom-4 right-4 z-90">
