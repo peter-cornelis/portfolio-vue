@@ -19,13 +19,15 @@
         <p class="text-lg">{{ t('about.introduction') }}</p>
         <ul class="grid grid-flow-col gap-8 w-fit mt-8 items-center">
             <li>
-                <a href="https://github.com/peter-cornelis" target="_blank" rel="noopener noreferrer" :title="t('general.github_profile')">
-                    <github class="w-8 cursor-pointer"/>
+                <a href="https://github.com/peter-cornelis" target="_blank" rel="noopener noreferrer" :title="t('general.github_profile')" class="relative">
+                    <div class="absolute inset-1 backdrop-blur-lg rounded-full w-6.5 h-6.5"></div>
+                    <github class="relative w-8 cursor-pointer"/>
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/peter-cornelis-dev/" target="_blank" rel="noopener noreferrer" :title="t('general.linkedin_profile')">
-                    <linked-in class="w-8 cursor-pointer"/>
+                <a href="https://www.linkedin.com/in/peter-cornelis-dev/" target="_blank" rel="noopener noreferrer" :title="t('general.linkedin_profile')" class="relative">
+                    <div class="absolute inset-1 backdrop-blur-lg rounded w-6 h-6"></div>
+                    <linked-in class="relative w-8 cursor-pointer"/>
                 </a>
             </li>
             <li>
