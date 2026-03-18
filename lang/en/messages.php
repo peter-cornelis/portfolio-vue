@@ -143,6 +143,7 @@ return [
         'street' => 'Honoré Borgerstraat 16',
         'city' => '8400 Ostend',
         'country' => 'BELGIUM',
+        'drive' => 'Driver\'s license B',
         'form' => [
             'name' => 'Name',
             'email' => 'Email address',

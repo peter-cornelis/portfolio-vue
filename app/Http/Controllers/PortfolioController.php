@@ -16,9 +16,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Home', [
-            'appName' => config('app.name'),
-        ]);
+        return Inertia::render('Home');
     }
 
     public function toggleLanguage(string $locale)
