@@ -105,7 +105,7 @@
                 <timeline-item-vert start="2014" end="2015" at="vdab" class="relative top-7 left-13 w-30">
                     {{ t('experience.sub_5_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true" class="relative -top-29 left-20 w-50">
+                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true" class="relative -top-29 left-20 w-56">
                     {{ t('experience.sub_2_title') }}
                 </timeline-item-vert>
                 <timeline-item-vert start="2023" end="2024" at="HoGent" class="relative top-7 left-10 w-70">

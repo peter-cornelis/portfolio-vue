@@ -91,6 +91,7 @@ class PortfolioController extends Controller
         if (app()->environment('local')) {
 
             $pdf = Browsershot::url(route('home'))
+                ->useCookies(['language' => app()->getLocale()])
                 ->setBasePath(public_path())
                 ->emulateMedia('print')
                 ->waitUntilNetworkIdle()
