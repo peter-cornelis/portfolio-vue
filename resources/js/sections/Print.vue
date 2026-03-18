@@ -1,17 +1,13 @@
 <script setup>
     import { useI18n } from "vue-i18n";
-    import { house, phone, mail, car, linkedIn, github, linked, techIcons } from "@/components/svgs";
+    import { house, phone, mail, car, linkedIn, github, linked } from "@/components/svgs";
     import { useContact } from "@/composables/useContact";
     import TimelineItemVert from "@/components/TimelineItemVert.vue";
-    import { computed, shallowRef } from "vue";
+    import TechLists from "@/components/TechLists.vue";
 
     const { contact } = useContact();
 
     const { t } = useI18n();
-    const icons = shallowRef(Object.values(techIcons));
-    const backendIcons = computed(() => icons.value.filter(icon => icon.type === 'backend'));
-    const frontendIcons = computed(() => icons.value.filter(icon => icon.type === 'frontend'));
-    const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool'));
 </script>
 <template>
     <div class="relative not-print:hidden w-5xl">
@@ -95,36 +91,8 @@
                 </div>
             </article>
         </div>
-        <div class="grid grid-cols-[auto_auto_auto] mx-auto w-fit pt-4 pb-8">
-            <h2 class="col-span-3 pb-4">{{ t('skills.sub_1_title') }}</h2>
-            <div class="w-fit px-8 pb-4">
-                <h3 class="type-skill">Backend</h3>
-                <ul class="grid grid-cols-2 gap-4">
-                    <li v-for="tech in backendIcons" :key="tech.name" class="flex gap-2 items-center">
-                        <component :is="tech.icon" class="w-9" :mono="true"/>
-                        {{ tech.name }}
-                    </li>
-                </ul>
-            </div>
-            <div class="not-first:border-l border-black/10 w-fit px-8 pb-4">
-                <h3 class="type-skill">Frontend</h3>
-                <ul class="grid grid-cols-4 gap-4">
-                    <li v-for="tech in frontendIcons" :key="tech.name" class="flex gap-2 items-center">
-                         <component :is="tech.icon" class="w-9" :mono="true"/>
-                        {{ tech.name }}
-                    </li>
-                </ul>
-            </div>
-            <div class="not-first:border-l border-black/10 w-fit px-8 pb-4">
-                <h3 class="type-skill">Tools</h3>
-                <ul class="grid grid-flow-col gap-4">
-                    <li v-for="tech in toolIcons" :key="tech.name" class="flex gap-2 items-center">
-                        <component :is="tech.icon" class="w-9" :mono="true"/>
-                        {{ tech.name }}
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <h2 class="pt-8">{{ t('skills.sub_1_title') }}</h2>
+        <tech-lists :mono="true"/>
         <h2>{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
             <ol class="relative flex w-full mt-38 border-t mx-auto mr-8 border-black/10">

@@ -8,7 +8,7 @@
 </script>
 <template>
     <section id="about" class="relative grid lg:grid-cols-[auto_1fr] my-10">
-        <span aria-hidden="true" class="absolute -top-304 -left-100 bg-linear-to-br from-cyan-300 dark:to-cyan-800 to-emerald-200 dark:from-green-500 w-400 h-400 rounded-full -z-10 shadow-2xl shadow-teal-300/20 dark:shadow-teal-200/10 transition-colors duration-500">
+        <span aria-hidden="true" class="absolute -top-304 -left-100 bg-linear-to-br from-cyan-300 dark:from-green-500 to-emerald-200 dark:to-cyan-800 w-400 h-400 rounded-full -z-10 shadow-2xl shadow-teal-300/20 dark:shadow-teal-200/10 transition-colors duration-500">
         </span>
         <span aria-hidden="true" class="absolute -top-204 -left-10 bg-primary dark:bg-darkPrimary w-220 h-220 rounded-full -z-10 shadow-[inset_0_0_30px_15px] shadow-teal-300/20 dark:shadow-teal-300/10 transition-colors duration-500">
         </span>

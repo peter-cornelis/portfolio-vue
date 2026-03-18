@@ -36,7 +36,6 @@ label {
     }
 }
 
-article,
 form {
     @apply px-6 py-4;
 }
@@ -117,12 +116,11 @@ main .white-glass {
     @apply aspect-square rounded-full from-purple-600 to-pink-600 not-disabled:hover:from-purple-500 not-disabled:hover:to-pink-500;
 }
 
-/* Animations */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%) }
+.type-skill {
+    @apply text-xl text-center mb-4;
 }
 
+/* Animations */
 @keyframes shake {
     10%,
     90% {

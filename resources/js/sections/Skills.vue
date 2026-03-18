@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { techIcons } from "@/components/svgs";
+import TechLists from "@/components/TechLists.vue";
 
 const { t } = useI18n();
 </script>
@@ -38,24 +39,7 @@ const { t } = useI18n();
                 </ul>
             </div>
         </article>
-        <div class="overflow-x-clip mt-12">
-            <h3 class="text-center font-semibold">{{ t('skills.carousel_title') }}</h3>
-            <div class="relative flex">
-                <div class="absolute z-20 left-0 w-16 h-full bg-linear-to-r from-primary dark:from-darkPrimary to-transparent transition-colors duration-500"></div>
-                <div class="absolute z-20 right-0 w-16 h-full bg-linear-to-l from-primary dark:from-darkPrimary to-transparent transition-colors duration-500"></div>
-                <ul class="flex gap-16 my-8 mx-auto px-8 w-fit animate-scroll">
-                    <li v-for="(component, key) in techIcons" :key="key" class="group w-16">
-                        <component :is="component.icon" class="h-12 mx-auto group-hover:scale-125 transition-transform duration-300"/>
-                        <span class="block text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ component.name }}</span>
-                    </li>
-                </ul>
-                <ul class="flex gap-16 my-8 mx-auto px-8 w-fit animate-scroll" aria-hidden="true">
-                    <li v-for="(component, key) in techIcons" :key="key" class="group w-16">
-                        <component :is="component.icon" class="h-12 mx-auto group-hover:scale-125 transition-transform duration-300"/>
-                        <span class="block text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ component.name }}</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <h3 class="text-center font-semibold py-8">{{ t('skills.carousel_title') }}</h3>
+        <tech-lists :icons-size="'w-10'"/>
     </section>
 </template>
