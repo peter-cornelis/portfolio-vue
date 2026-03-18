@@ -9,7 +9,7 @@
 
     const resumeNotice = setTimeout(() => {
         hover.value = true;
-    }, 3000);
+    }, 5000);
 
     watch(hover, (isHovering) => {
         if (isHovering) {

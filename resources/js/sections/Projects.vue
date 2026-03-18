@@ -20,7 +20,7 @@ const projects = computed(() => [
         alt: t('projects.sub_portfolio_alt'),
         description: t('projects.sub_portfolio_info'),
         imageUrl: new URL('../../images/portfolio.webp', import.meta.url).href,
-        usedTech: [techIcons.html, techIcons.tailwind, techIcons.laravel, techIcons.alpine, techIcons.livewire],
+        usedTech: [techIcons.html, techIcons.css, techIcons.tailwind, techIcons.laravel, techIcons.vue],
         githubUrl: "https://github.com/peter-cornelis/portfolio",
         demoUrl: "https://dev.petercornelis.be"
     },

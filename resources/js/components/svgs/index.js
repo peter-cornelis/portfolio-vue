@@ -9,7 +9,7 @@ import mysql from "./Mysql.vue";
 import php from "./Php.vue";
 import laravel from "./Laravel.vue";
 import tailwind from "./Tailwind.vue";
-import alpine from "./Apline.vue";
+import alpine from "./Alpine.vue";
 import livewire from "./Livewire.vue";
 import vue from "./Vue.vue";
 import bootstrap from "./Bootstrap.vue";
