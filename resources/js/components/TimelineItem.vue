@@ -29,7 +29,7 @@ defineProps({
                 <school v-else class="w-6 h-6" />
                 <span class="absolute w-10 h-10 rounded-full hover:ring-1 hover:animate-ping duration-300" :class="isWork ? 'ring-teal-500' : 'ring-violet-500'"></span>
             </span>
-            <span class="capitalize border text-heading text-xs font-semibold dark:text-mainLight px-1.5 py-0.5 rounded"
+            <span class="capitalize text-heading text-xs font-semibold dark:text-mainLight px-1.5 py-0.5 rounded shadow"
             :class="isWork ? 'bg-teal-400/60 dark:bg-teal-500/80' : 'bg-violet-400/60 dark:bg-violet-500/80'">{{ start == null ? end : `${start}, ${end}` }}</span>
             <h3 class="flex items-center capitalize text-lg font-semibold text-heading mt-2 p-0"><slot/></h3>
             <p class="uppercase text-mainDark/60 dark:text-mainLight/50 py-.5 mb-6">{{ at }}</p>

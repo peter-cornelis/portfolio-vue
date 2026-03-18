@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use App\Services\ChatService;
 use Illuminate\Support\Facades\Log;
+use Spatie\Browsershot\Browsershot;
 
 class PortfolioController extends Controller
 {
@@ -85,5 +86,29 @@ class PortfolioController extends Controller
             $answer = __('messages.chat.failed');
         }
         return redirect()->back()->with('answer', $answer);
+    }
+
+    public function downloadPdf()
+    {
+        if (app()->environment('local')) {
+
+            $pdf = Browsershot::url(route('home'))
+                ->setBasePath(public_path())
+                ->emulateMedia('print')
+                ->waitUntilNetworkIdle()
+                ->format('A4')
+                ->margins(10, 10, 10, 10)
+                ->pdf();
+
+            return response($pdf, 200, [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="CV_Peter_Cornelis.pdf"',
+            ]);
+        }
+
+        return response()->file(public_path('assets/cv_'.app()->getLocale().'.pdf'),[
+            'Vary' => 'Cookie',
+            'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"'
+            ]);
     }
 }

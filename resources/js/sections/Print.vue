@@ -8,7 +8,6 @@
     const { contact } = useContact();
 
     const { t } = useI18n();
-    const profile = new URL('../../images/profiel-15.avif', import.meta.url).href;
     const icons = shallowRef(Object.values(techIcons));
     const backendIcons = computed(() => icons.value.filter(icon => icon.type === 'backend'));
     const frontendIcons = computed(() => icons.value.filter(icon => icon.type === 'frontend'));
@@ -58,7 +57,7 @@
                 </ul>
             </address>
             <span class="bg-text/80 rounded-[50%_50%_50%_10%] p-1 w-fit h-fit row-start-1 col-start-2 row-span-3 my-auto">
-                <img :src="profile" alt="" class="w-64 h-64 rounded-[50%_50%_9%_50%] shadow shadow-black/20 scale-x-[-1]">
+                <img src="../../images/profiel-15.avif" alt="" class="w-64 h-64 rounded-[50%_50%_9%_50%] shadow shadow-black/20 scale-x-[-1]">
             </span>
         </div>
         <p class="px-6 py-6 mx-1 mb-4 text-lg text-primary bg-text/80 font-semibold rounded-md shadow">{{ t('about.print_introduction') }}</p>
@@ -96,7 +95,7 @@
                 </div>
             </article>
         </div>
-        <div class="grid grid-cols-[auto_auto_auto] mx-auto w-fit py-4">
+        <div class="grid grid-cols-[auto_auto_auto] mx-auto w-fit pt-4 pb-8">
             <h2 class="col-span-3 pb-4">{{ t('skills.sub_1_title') }}</h2>
             <div class="w-fit px-8 pb-4">
                 <h3 class="type-skill">Backend</h3>
@@ -110,18 +109,18 @@
             <div class="not-first:border-l border-black/10 w-fit px-8 pb-4">
                 <h3 class="type-skill">Frontend</h3>
                 <ul class="grid grid-cols-4 gap-4">
-                    <li v-for="icon in frontendIcons" :key="icon.name" class="flex gap-2 items-center">
-                         <component :is="icon.icon" class="w-9" :mono="true"/>
-                        {{ icon.name }}
+                    <li v-for="tech in frontendIcons" :key="tech.name" class="flex gap-2 items-center">
+                         <component :is="tech.icon" class="w-9" :mono="true"/>
+                        {{ tech.name }}
                     </li>
                 </ul>
             </div>
             <div class="not-first:border-l border-black/10 w-fit px-8 pb-4">
                 <h3 class="type-skill">Tools</h3>
                 <ul class="grid grid-flow-col gap-4">
-                    <li v-for="icon in toolIcons" :key="icon.name" class="flex gap-2 items-center">
-                        <component :is="icon.icon" class="w-9" :mono="true"/>
-                        {{ icon.name }}
+                    <li v-for="tech in toolIcons" :key="tech.name" class="flex gap-2 items-center">
+                        <component :is="tech.icon" class="w-9" :mono="true"/>
+                        {{ tech.name }}
                     </li>
                 </ul>
             </div>

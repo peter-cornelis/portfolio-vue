@@ -1,57 +1,43 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import StarRating from "@/components/StarRating.vue";
 import { techIcons } from "@/components/svgs";
-import { ratings } from "@/data/ratings.js";
 
 const { t } = useI18n();
 </script>
 <template>
     <section id="skills">
         <h2>{{ t('skills.title') }}</h2>
-        <div class="grid xl:grid-cols-[1fr_auto]">
-            <div class="relative w-fit min-w-90 mx-auto lg:col-start-1">
-                <span aria-hidden="true" class="absolute -top-25 -right-25 lg:top-45 lg:-left-20 bg-linear-to-br from-emerald-300 dark:from-teal-500 to-lime-200 dark:to-rose-300 w-40 h-40 rounded-full -z-10 transition-all duration-2000">
-                </span>
-                <article class=" white-glass w-fit">
-                    <h3 class="text-center">{{ t('skills.sub_1_title') }}</h3>
-                    <ul class="w-fit">
-                        <star-rating v-for="(rating, skill) in ratings" :key="skill" :filled="rating">{{ t(`general.${skill}`) }}</star-rating>
-                    </ul>
-                </article>
+        <article class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 my-8 lg:mt-0 max-w-4xl mx-auto lg:col-start-2 lg:row-start-1">
+            <div>
+                <h3>{{ t('skills.sub_2_title') }}</h3>
+                <p>{{ t('skills.sub_2_info') }}</p>
             </div>
-            <article class="grid md:grid-cols-2 gap-8 my-8 lg:mt-0 max-w-4xl mx-auto lg:col-start-2 lg:row-start-1">
-                <div>
-                    <h3>{{ t('skills.sub_2_title') }}</h3>
-                    <p>{{ t('skills.sub_2_info') }}</p>
-                </div>
-                <div>
-                    <h3>{{ t('skills.sub_3_title') }}</h3>
-                    <p>{{ t('skills.sub_3_info') }}</p>
-                </div>
-                <div>
-                    <h3>{{ t('skills.sub_4_title') }}</h3>
-                    <p>{{ t('skills.sub_4_info') }}</p>
-                </div>
-                <div>
-                    <h3>{{ t('skills.sub_5_title') }}</h3>
-                    <ul class="w-fit">
-                        <li class="grid grid-cols-2 gap-8 text-left">
-                            <span class="font-bold text-right">{{ t('skills.sub_5_nl') }}</span>
-                            {{ t('skills.sub_5_nl_state') }}
-                        </li>
-                        <li class="grid grid-cols-2 gap-8 text-left">
-                            <span class="font-bold text-right">{{ t('skills.sub_5_eng') }}</span>
-                            {{ t('skills.sub_5_eng_state') }}
-                        </li>
-                        <li class="grid grid-cols-2 gap-8 text-left">
-                            <span class="font-bold text-right">{{ t('skills.sub_6_fr') }}</span>
-                            {{ t('skills.sub_6_fr_state') }}
-                        </li>
-                    </ul>
-                </div>
-            </article>
-        </div>
+            <div>
+                <h3>{{ t('skills.sub_3_title') }}</h3>
+                <p>{{ t('skills.sub_3_info') }}</p>
+            </div>
+            <div>
+                <h3>{{ t('skills.sub_4_title') }}</h3>
+                <p>{{ t('skills.sub_4_info') }}</p>
+            </div>
+            <div>
+                <h3>{{ t('skills.sub_5_title') }}</h3>
+                <ul class="w-fit">
+                    <li class="grid grid-cols-2 gap-8 text-left">
+                        <span class="font-bold text-right">{{ t('skills.sub_5_nl') }}</span>
+                        {{ t('skills.sub_5_nl_state') }}
+                    </li>
+                    <li class="grid grid-cols-2 gap-8 text-left">
+                        <span class="font-bold text-right">{{ t('skills.sub_5_eng') }}</span>
+                        {{ t('skills.sub_5_eng_state') }}
+                    </li>
+                    <li class="grid grid-cols-2 gap-8 text-left">
+                        <span class="font-bold text-right">{{ t('skills.sub_6_fr') }}</span>
+                        {{ t('skills.sub_6_fr_state') }}
+                    </li>
+                </ul>
+            </div>
+        </article>
         <div class="overflow-x-clip mt-12">
             <h3 class="text-center font-semibold">{{ t('skills.carousel_title') }}</h3>
             <div class="relative flex">
