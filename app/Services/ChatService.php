@@ -6,20 +6,21 @@ use Gemini\Data\Content;
 use Gemini\Laravel\Facades\Gemini;
 use Illuminate\Support\Facades\Log;
 use MillerPHP\LaravelBrowserless\Facades\Browserless;
+
 class ChatService
 {
     public function addJobVacanciesData(string $question): string
     {
         preg_match_all('/https?:\/\/[^\s"]+/i', $question, $matches);
         $urls = $matches[0];
-        $urls = array_filter($urls, fn($url) => str_starts_with($url, 'https://'));
+        $urls = array_filter($urls, fn ($url) => str_starts_with($url, 'https://'));
         $urls = array_slice($urls, 0, 1); // always allow only the first URL
 
-        if (!empty($urls)) {
+        if (! empty($urls)) {
             $url = $urls[0];
             $vacancyData = $this->getJobVacancyData($url);
             session(['vacancyData' => $vacancyData]);
-            $question .= ' Job vacancy: ' . $vacancyData;
+            $question .= ' Job vacancy: '.$vacancyData;
         }
 
         return $question;
@@ -43,6 +44,7 @@ class ChatService
                 'url' => $url,
                 'error' => $e->getMessage(),
             ]);
+
             return 'failed to collect job vacancy data for this url';
         }
     }
@@ -58,9 +60,9 @@ class ChatService
             ->generateContent($question)
             ->text();
 
-            $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
-            $answer = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
+        $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
+        $answer = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
+
         return $answer;
     }
 }
-

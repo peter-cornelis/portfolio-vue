@@ -26,7 +26,7 @@ class ContactFormConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject:  __('messages.confirmation_mail.contact_form_confirmation_subject', ['name' => $this->formData['name']]),
+            subject: __('messages.confirmation_mail.contact_form_confirmation_subject', ['name' => $this->formData['name']]),
             replyTo: $this->formData['email']
         );
     }

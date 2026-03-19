@@ -59,7 +59,7 @@ textarea,
 }
 
 .soft-img {
-    @apply shadow border border-black/5 rounded-lg w-full max-w-md mx-auto self-stretch object-cover;
+    @apply shadow border border-white/5 rounded-lg w-full max-w-md mx-auto self-stretch object-cover;
 }
 
 main .glass,

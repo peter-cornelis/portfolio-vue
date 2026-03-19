@@ -40,7 +40,7 @@ class HandleInertiaRequests extends Middleware
             'appName' => config('app.name'),
 
             // Lazily...
-            'answer' => fn () => $request->session()->get('answer')
+            'answer' => fn () => $request->session()->get('answer'),
         ]);
     }
 }

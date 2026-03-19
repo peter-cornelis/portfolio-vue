@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Cookie;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Mail\ContactFormMail;
+
 use App\Mail\ContactFormConfirmation;
+use App\Mail\ContactFormMail;
+use App\Services\ChatService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
-use App\Services\ChatService;
-use Illuminate\Support\Facades\Log;
 use Spatie\Browsershot\Browsershot;
 
 class PortfolioController extends Controller
@@ -24,15 +24,17 @@ class PortfolioController extends Controller
         if (in_array($locale, ['en', 'nl'])) {
             Cookie::queue('language', $locale, 525600);
         }
+
         return redirect()->back();
     }
 
-    public function contact(Request $request) {
+    public function contact(Request $request)
+    {
         $validated = $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email:dns|max:150',
-            'message' => 'required|string|min:30|max:500'
-        ],[
+            'message' => 'required|string|min:30|max:500',
+        ], [
             'name.required' => 'error.name_required',
             'name.string' => 'error.name_string',
             'name.max' => 'error.name_max',
@@ -46,10 +48,10 @@ class PortfolioController extends Controller
         ]);
 
         Mail::to(config('mail.from.address'))
-        ->send(new ContactFormMail($validated));
+            ->send(new ContactFormMail($validated));
 
         Mail::to($validated['email'])
-        ->send(new ContactFormConfirmation($validated));
+            ->send(new ContactFormConfirmation($validated));
 
         return redirect()->back();
     }
@@ -58,7 +60,7 @@ class PortfolioController extends Controller
     {
         $validated = $request->validate([
             'question' => 'required|string|min:10|max:500',
-        ],[
+        ], [
             'question.required' => 'error.question_required',
             'question.string' => 'error.question_string',
             'question.min' => 'error.question_min',
@@ -72,10 +74,10 @@ class PortfolioController extends Controller
         try {
             $answer = $chatService->getGeminiAnswer($question);
             Log::info('AI Chat response generated', [
-                'answer_length' => strlen($answer)
+                'answer_length' => strlen($answer),
             ]);
 
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             Log::error('AI Chat failed', [
                 'question' => $question,
                 'error' => $e->getMessage(),
@@ -83,6 +85,7 @@ class PortfolioController extends Controller
 
             $answer = __('messages.chat.failed');
         }
+
         return redirect()->back()->with('answer', $answer);
     }
 
@@ -105,9 +108,9 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_'.app()->getLocale().'.pdf'),[
+        return response()->file(public_path('assets/cv_'.app()->getLocale().'.pdf'), [
             'Vary' => 'Cookie',
-            'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"'
-            ]);
+            'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
+        ]);
     }
 }

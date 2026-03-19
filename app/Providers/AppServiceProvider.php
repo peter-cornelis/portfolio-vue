@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Inertia::share([
-            'locale' => fn() => app()->getLocale(),
-            'translations' => fn() => [
+            'locale' => fn () => app()->getLocale(),
+            'translations' => fn () => [
                 app()->getLocale() => trans('messages'),
                 app()->getLocale() === 'en' ? 'nl' : 'en' => trans('messages', [], app()->getLocale() === 'en' ? 'nl' : 'en'),
             ],

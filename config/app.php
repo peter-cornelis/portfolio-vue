@@ -123,18 +123,18 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-        /*
+    /*
     |--------------------------------------------------------------------------
     | Contact information
     |--------------------------------------------------------------------------
     */
 
     'contact' => [
-        'name' => "Peter Cornelis",
+        'name' => 'Peter Cornelis',
         'phone' => env('CONTACT_PHONE'),
         'email' => env('MAIL_USERNAME'),
-        'github' => "https://github.com/peter-cornelis",
-        'linkedin' => "https://www.linkedin.com/in/peter-cornelis-b4086237a/"
+        'github' => 'https://github.com/peter-cornelis',
+        'linkedin' => 'https://www.linkedin.com/in/peter-cornelis-b4086237a/',
     ],
 
     /*
@@ -144,20 +144,20 @@ return [
     */
 
     'technologies' => [
-        "HTML",
-        "CSS",
-        "Tailwind",
-        "Twig",
-        "PHP",
-        "Full-Stack Web Development",
-        "JavaScript",
-        "MySQL",
-        "SQLite",
-        "API Development",
-        "Laravel",
-        "Livewire",
-        "AlpineJS",
-        "Bootstrap",
-        "Git",
-    ]
+        'HTML',
+        'CSS',
+        'Tailwind',
+        'Twig',
+        'PHP',
+        'Full-Stack Web Development',
+        'JavaScript',
+        'MySQL',
+        'SQLite',
+        'API Development',
+        'Laravel',
+        'Livewire',
+        'AlpineJS',
+        'Bootstrap',
+        'Git',
+    ],
 ];
