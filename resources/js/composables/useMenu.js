@@ -9,15 +9,15 @@ function toggleMenu() {
 }
 
 function onDocumentClick(e) {
-  if (e.target.closest('.mobile-menu') || e.target.closest('header')) return;
-  showMobile.value = false;
+    if (e.target.closest(".mobile-menu") || e.target.closest("header")) return;
+    showMobile.value = false;
 }
 
 watch(showMobile, (open) => {
     if (open) {
-        document.addEventListener('click', onDocumentClick);
+        document.addEventListener("click", onDocumentClick);
     } else {
-        document.removeEventListener('click', onDocumentClick);
+        document.removeEventListener("click", onDocumentClick);
     }
 });
 

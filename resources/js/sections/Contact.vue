@@ -51,10 +51,12 @@ function submit() {
             <label for="message">
                 {{ t('contact.form.message') }}
                 <span>{{ form.errors.message ? '| ' + t(`${form.errors.message}`) : '*' }}</span>
-                <textarea v-model="form.message" id="message" class="milky resize-none" :class="{ 'animate-shake': shake }" rows="8"></textarea>
+                <textarea v-model="form.message" id="message" class="milky resize-none"
+                    :class="{ 'animate-shake': shake }" rows="8"></textarea>
             </label>
             <div class="relative">
-                <div @click="shaker(inputsFilled)" class="absolute w-full h-full cursor-not-allowed" :class="{ 'z-20': !inputsFilled  }"></div>
+                <div @click="shaker(inputsFilled)" class="absolute w-full h-full cursor-not-allowed"
+                    :class="{ 'z-20': !inputsFilled }"></div>
                 <button type="submit" class="relative w-full"
                     :class="!inputsFilled && !form.processing && !success ? 'btn-disabled' : success ? 'btn' : 'btn-secondary'"
                     :disabled="!inputsFilled || form.processing || success">

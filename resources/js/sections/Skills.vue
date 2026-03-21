@@ -8,7 +8,8 @@ const { t } = useI18n();
 <template>
     <section id="skills">
         <h2>{{ t('skills.title') }}</h2>
-        <article class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 my-8 lg:mt-0 max-w-4xl mx-auto lg:col-start-2 lg:row-start-1">
+        <article
+            class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 my-8 lg:mt-0 max-w-4xl mx-auto lg:col-start-2 lg:row-start-1">
             <div>
                 <h3>{{ t('skills.sub_2_title') }}</h3>
                 <p>{{ t('skills.sub_2_info') }}</p>
@@ -40,6 +41,6 @@ const { t } = useI18n();
             </div>
         </article>
         <h3 class="text-center font-semibold py-8">{{ t('skills.carousel_title') }}</h3>
-        <tech-lists :icons-size="'w-10'"/>
+        <tech-lists :icons-size="'w-10'" />
     </section>
 </template>

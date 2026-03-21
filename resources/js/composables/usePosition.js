@@ -1,4 +1,4 @@
-import {ref, computed } from "vue";
+import { ref, computed } from "vue";
 
 export function usePosition() {
     const x = ref(0);
@@ -15,6 +15,6 @@ export function usePosition() {
 
     return {
         position,
-        setPosition
+        setPosition,
     };
 }

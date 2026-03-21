@@ -1,8 +1,8 @@
 <script setup>
-    import { useI18n } from "vue-i18n";
-    import TimelineItem from "@/components/TimelineItem.vue";
+import { useI18n } from "vue-i18n";
+import TimelineItem from "@/components/TimelineItem.vue";
 
-    const { t } = useI18n();
+const { t } = useI18n();
 </script>
 <template>
     <section id="experience">

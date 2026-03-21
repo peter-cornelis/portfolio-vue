@@ -1,12 +1,12 @@
 <script setup>
-    import Header from "@/components/Header.vue";
-    import about from "@/sections/About.vue";
-    import skills from "@/sections/Skills.vue";
-    import experience from "@/sections/Experience.vue";
-    import projects from "@/sections/Projects.vue";
-    import contact from "@/sections/Contact.vue";
-    import chat from "@/sections/Chat.vue";
-    import Print from "@/sections/Print.vue";
+import Header from "@/components/Header.vue";
+import about from "@/sections/About.vue";
+import skills from "@/sections/Skills.vue";
+import experience from "@/sections/Experience.vue";
+import projects from "@/sections/Projects.vue";
+import contact from "@/sections/Contact.vue";
+import chat from "@/sections/Chat.vue";
+import Print from "@/sections/Print.vue";
 </script>
 <template>
     <Header />
