@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use Gemini\Data\Content;
 use Gemini\Laravel\Facades\Gemini;
 use Illuminate\Support\Facades\Log;
 use MillerPHP\LaravelBrowserless\Facades\Browserless;
+use Throwable;
 
 class ChatService
 {
@@ -13,10 +16,10 @@ class ChatService
     {
         preg_match_all('/https?:\/\/[^\s"]+/i', $question, $matches);
         $urls = $matches[0];
-        $urls = array_filter($urls, fn ($url) => str_starts_with($url, 'https://'));
+        $urls = array_filter($urls, fn (string $url) => str_starts_with($url, 'https://'));
         $urls = array_slice($urls, 0, 1); // always allow only the first URL
 
-        if (! empty($urls)) {
+        if ($urls !== []) {
             $url = $urls[0];
             $vacancyData = $this->getJobVacancyData($url);
             session(['vacancyData' => $vacancyData]);
@@ -39,7 +42,7 @@ class ChatService
             $text = collect($content)->pluck('text')->implode("\n");
 
             return trim(substr($text, 0, 5000));
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             Log::warning('Browserless scrape failed', [
                 'url' => $url,
                 'error' => $e->getMessage(),
@@ -61,8 +64,7 @@ class ChatService
             ->text();
 
         $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
-        $answer = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
 
-        return $answer;
+        return preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
     }
 }

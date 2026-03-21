@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -15,10 +17,7 @@ class ContactFormMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public array $formData)
-    {
-        $this->formData = $formData;
-    }
+    public function __construct(public array $formData) {}
 
     /**
      * Get the message envelope.
@@ -26,8 +25,8 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Portfolio: nieuw contactformulier door {$this->formData['name']}",
-            replyTo: $this->formData['email']
+            replyTo: $this->formData['email'],
+            subject: "Portfolio: nieuw contactformulier door {$this->formData['name']}"
         );
     }
 

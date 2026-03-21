@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Mail\ContactFormConfirmation;
 use App\Mail\ContactFormMail;
 use App\Services\ChatService;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
@@ -77,7 +80,7 @@ class PortfolioController extends Controller
                 'answer_length' => strlen($answer),
             ]);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             Log::error('AI Chat failed', [
                 'question' => $question,
                 'error' => $e->getMessage(),

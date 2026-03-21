@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -16,10 +18,7 @@ class ContactFormConfirmation extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public array $formData)
-    {
-        $this->formData = $formData;
-    }
+    public function __construct(public array $formData) {}
 
     /**
      * Get the message envelope.
@@ -27,8 +26,8 @@ class ContactFormConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('messages.confirmation_mail.contact_form_confirmation_subject', ['name' => $this->formData['name']]),
-            replyTo: $this->formData['email']
+            replyTo: $this->formData['email'],
+            subject: __('messages.confirmation_mail.contact_form_confirmation_subject', ['name' => $this->formData['name']])
         );
     }
 
