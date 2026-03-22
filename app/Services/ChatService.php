@@ -46,7 +46,7 @@ class ChatService
         }
 
         $vacancyData = $this->scrapeVacancyPage($url);
-        session(['vacancyData' => $vacancyData]); // Store vacancy data for possible follow-up questions in the same session
+        session(['vacancyData' => $vacancyData]); // Store vacancy data for possible follow-up questions
 
         return $vacancyData;
     }
@@ -76,14 +76,16 @@ class ChatService
         $vacancyData = session('vacancyData', '');
         $instructions = str_replace('{vacancyData}', $vacancyData, config('gemini.system_instructions'));
         $answer = Gemini::generativeModel(model: 'gemini-2.5-flash')
-            ->withSystemInstruction(
-                Content::parse($instructions)
-            )
+            ->withSystemInstruction(Content::parse($instructions))
             ->generateContent($question)
             ->text();
 
         $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
 
-        return preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>', $answer);
+        return preg_replace(
+            '@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@',
+            '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>',
+            $answer
+        );
     }
 }
