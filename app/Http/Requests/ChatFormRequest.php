@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Override;
 
 class ChatFormRequest extends FormRequest
 {
@@ -23,7 +26,7 @@ class ChatFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'question' => 'required|string|min:10|max:500'
+            'question' => 'required|string|min:10|max:500',
         ];
     }
 
@@ -32,6 +35,7 @@ class ChatFormRequest extends FormRequest
      *
      * @return array<string, array<string>|string>
      */
+    #[Override]
     public function messages(): array
     {
         return [
