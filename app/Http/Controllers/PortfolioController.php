@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChatFormRequest;
+use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactFormConfirmation;
 use App\Mail\ContactFormMail;
 use App\Services\ChatService;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -31,24 +32,9 @@ class PortfolioController extends Controller
         return redirect()->back();
     }
 
-    public function contact(Request $request)
+    public function contact(ContactFormRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:100',
-            'email' => 'required|email:dns|max:150',
-            'message' => 'required|string|min:30|max:500',
-        ], [
-            'name.required' => 'error.name_required',
-            'name.string' => 'error.name_string',
-            'name.max' => 'error.name_max',
-            'email.required' => 'error.email_required',
-            'email.email' => 'error.email_email',
-            'email.max' => 'error.email_max',
-            'message.required' => 'error.message_required',
-            'message.string' => 'error.message_string',
-            'message.min' => 'error.message_min',
-            'message.max' => 'error.message_max',
-        ]);
+        $validated = $request->validated();
 
         Mail::to(config('mail.from.address'))
             ->send(new ContactFormMail($validated));
@@ -59,16 +45,9 @@ class PortfolioController extends Controller
         return redirect()->back();
     }
 
-    public function chat(Request $request, ChatService $chatService)
+    public function chat(ChatFormRequest $request, ChatService $chatService)
     {
-        $validated = $request->validate([
-            'question' => 'required|string|min:10|max:500',
-        ], [
-            'question.required' => 'error.question_required',
-            'question.string' => 'error.question_string',
-            'question.min' => 'error.question_min',
-            'question.max' => 'error.question_max',
-        ]);
+        $validated = $request->validated();
         Log::info('AI Chat request made', [
             'question' => $validated['question'],
         ]);
@@ -79,7 +58,6 @@ class PortfolioController extends Controller
             Log::info('AI Chat response generated', [
                 'answer_length' => strlen($answer),
             ]);
-
         } catch (Exception $e) {
             Log::error('AI Chat failed', [
                 'question' => $question,
@@ -111,7 +89,7 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_'.app()->getLocale().'.pdf'), [
+        return response()->file(public_path('assets/cv_' . app()->getLocale() . '.pdf'), [
             'Vary' => 'Cookie',
             'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
         ]);
