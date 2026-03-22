@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use Exception;
 use Gemini\Data\Content;
 use Gemini\Laravel\Facades\Gemini;
 use Illuminate\Support\Facades\Log;
@@ -12,24 +13,45 @@ use Throwable;
 
 class ChatService
 {
-    public function addJobVacanciesData(string $question): string
+    public function getAnswer(string $question): string
     {
-        preg_match_all('/https?:\/\/[^\s"]+/i', $question, $matches);
-        $urls = $matches[0];
-        $urls = array_filter($urls, fn (string $url) => str_starts_with($url, 'https://'));
-        $urls = array_slice($urls, 0, 1); // always allow only the first URL
+        Log::info('AI Chat request made', ['question' => $question]);
 
-        if ($urls !== []) {
-            $url = $urls[0];
-            $vacancyData = $this->getJobVacancyData($url);
-            session(['vacancyData' => $vacancyData]);
-            $question .= ' Job vacancy: '.$vacancyData;
+        $vacancyData = '';
+
+        if (str_contains($question, 'https://')) {
+            $vacancyData = $this->resolveVacancyData($question);
+        } elseif (session()->has('vacancyData')) {
+            $vacancyData = session('vacancyData');
         }
 
-        return $question;
+        try {
+            $answer = $this->getGeminiAnswer($question, $vacancyData);
+            Log::info('AI Chat response generated', ['answer_length' => strlen($answer)]);
+        } catch (Exception $e) {
+            Log::error('AI Chat failed', ['question' => $question, 'error' => $e->getMessage()]);
+            $answer = __('messages.chat.failed');
+        }
+
+        return $answer;
     }
 
-    private function getJobVacancyData(string $url): string
+    private function resolveVacancyData(string $question): string
+    {
+        preg_match('/https?:\/\/[^\s"]+/i', $question, $match);
+        $url = $match[0] ?? null;
+
+        if ($url === null) {
+            return '';
+        }
+
+        $vacancyData = $this->scrapeVacancyPage($url);
+        session(['vacancyData' => $vacancyData]); // Store vacancy data for possible follow-up questions in the same session
+
+        return $vacancyData;
+    }
+
+    private function scrapeVacancyPage(string $url): string
     {
         try {
             $result = Browserless::scrape()
@@ -43,16 +65,13 @@ class ChatService
 
             return trim(substr($text, 0, 5000));
         } catch (Throwable $e) {
-            Log::warning('Browserless scrape failed', [
-                'url' => $url,
-                'error' => $e->getMessage(),
-            ]);
+            Log::warning('Browserless scrape failed', ['url' => $url, 'error' => $e->getMessage()]);
 
             return 'failed to collect job vacancy data for this url';
         }
     }
 
-    public function getGeminiAnswer(string $question): string
+    private function getGeminiAnswer(string $question): string
     {
         $vacancyData = session('vacancyData', '');
         $instructions = str_replace('{vacancyData}', $vacancyData, config('gemini.system_instructions'));
