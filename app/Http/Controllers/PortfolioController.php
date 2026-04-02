@@ -52,7 +52,7 @@ class PortfolioController extends Controller
         return redirect()->back()->with('answer', $answer);
     }
 
-    public function downloadPdf($locale)
+    public function downloadPdf(string $locale)
     {
         if (app()->environment('local')) {
 
@@ -71,7 +71,7 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_' . $locale . '.pdf'), [
+        return response()->file(public_path('assets/cv_'.$locale.'.pdf'), [
             'Vary' => 'Cookie',
             'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
         ]);

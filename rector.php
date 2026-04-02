@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 use Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedCallRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnUnionTypeRector;
@@ -23,6 +24,7 @@ return RectorConfig::configure()
         __DIR__.'/storage',
         __DIR__.'/vendor',
         AddClosureVoidReturnTypeWhereNoReturnRector::class,
+        AddOverrideAttributeToOverriddenMethodsRector::class,
         ReturnTypeFromStrictTypedCallRector::class,
         ReturnUnionTypeRector::class,
         DeclareStrictTypesRector::class => [
