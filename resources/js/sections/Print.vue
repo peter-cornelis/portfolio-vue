@@ -65,7 +65,7 @@ const { t } = useI18n();
             t('about.print_introduction') }}</p>
         <div class="p-4">
             <h2 class="col-span-2">{{ t('skills.title') }}</h2>
-            <article class="grid grid-cols-4 gap-8 lg:mt-0 mx-auto lg:col-start-2 lg:row-start-1">
+            <article class="grid grid-cols-4 gap-8 mb-12 lg:mt-0 mx-auto lg:col-start-2 lg:row-start-1">
                 <div>
                     <h3>{{ t('skills.sub_2_title') }}</h3>
                     <p>{{ t('skills.sub_2_info') }}</p>
@@ -96,9 +96,8 @@ const { t } = useI18n();
                     </ul>
                 </div>
             </article>
+            <tech-lists :mono="true" />
         </div>
-        <h2 class="pt-8">{{ t('skills.sub_1_title') }}</h2>
-        <tech-lists :mono="true" />
         <h2 class="pt-8">{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
             <ol class="relative flex w-full mt-38 border-t mx-auto mr-8 border-black/10">
