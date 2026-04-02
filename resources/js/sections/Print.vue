@@ -99,7 +99,7 @@ const { t } = useI18n();
         </div>
         <h2 class="pt-8">{{ t('skills.sub_1_title') }}</h2>
         <tech-lists :mono="true" />
-        <h2>{{ t('experience.title') }}</h2>
+        <h2 class="pt-8">{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
             <ol class="relative flex w-full mt-38 border-t mx-auto mr-8 border-black/10">
                 <timeline-item-vert end="2006" at="Sint-Vincentius Deinze" class="relative top-7 left-0 w-60">
@@ -113,7 +113,7 @@ const { t } = useI18n();
                     {{ t('experience.sub_5_title') }}
                 </timeline-item-vert>
                 <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true"
-                    class="relative -top-29 left-20 w-56">
+                    class="relative -top-29 left-24 w-56">
                     {{ t('experience.sub_2_title') }}
                 </timeline-item-vert>
                 <timeline-item-vert start="2023" end="2024" at="HoGent" class="relative top-7 left-10 w-70">

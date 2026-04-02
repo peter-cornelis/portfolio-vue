@@ -52,12 +52,12 @@ class PortfolioController extends Controller
         return redirect()->back()->with('answer', $answer);
     }
 
-    public function downloadPdf()
+    public function downloadPdf($locale)
     {
         if (app()->environment('local')) {
 
             $pdf = Browsershot::url(route('home'))
-                ->useCookies(['language' => app()->getLocale()])
+                ->useCookies(['language' => $locale])
                 ->setBasePath(public_path())
                 ->emulateMedia('print')
                 ->waitUntilNetworkIdle()
@@ -71,7 +71,7 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_'.app()->getLocale().'.pdf'), [
+        return response()->file(public_path('assets/cv_' . $locale . '.pdf'), [
             'Vary' => 'Cookie',
             'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
         ]);

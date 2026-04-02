@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import { ref, watch, onUnmounted } from "vue";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const hover = ref(false);
 const showText = ref(false);
@@ -26,7 +26,8 @@ onUnmounted(() => {
 });
 </script>
 <template>
-    <a href="/download-pdf" target="_blank" :aria-label="t('general.download_cv')" rel="noopener noreferrer"
+    <a :href="`/download-pdf/${locale}`" target="_blank" :aria-label="t('general.download_cv')"
+        rel="noopener noreferrer"
         class="rounded-sm bg-darkPrimary/60 dark:bg-primary/70 text-primary dark:text-text text-sm font-semibold relative flex items-center gap-1 cursor-pointer"
         @mouseover="hover = true" @mouseleave="hover = false">
         <svg class="w-7 rounded-sm bg-darkPrimary dark:bg-primary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

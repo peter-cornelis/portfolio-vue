@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Override;
 
@@ -13,6 +12,7 @@ class ChatFormRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
+    #[Override]
     public function authorize(): bool
     {
         return true;
@@ -23,6 +23,7 @@ class ChatFormRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
+    #[Override]
     public function rules(): array
     {
         return [

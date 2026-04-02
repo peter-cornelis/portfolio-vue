@@ -7,4 +7,4 @@ Route::get('/', [PortfolioController::class, 'index'])->name('home');
 Route::get('/language/{locale}', [PortfolioController::class, 'toggleLanguage']);
 Route::post('/contact', [PortfolioController::class, 'contact'])->middleware('throttle:5,1');
 Route::post('/chat', [PortfolioController::class, 'chat'])->middleware('throttle:5,1');
-Route::get('/download-pdf', [PortfolioController::class, 'downloadPdf']);
+Route::get('/download-pdf/{locale}', [PortfolioController::class, 'downloadPdf']);

@@ -75,7 +75,7 @@ return [
     ],
     'skills' => [
         'title' => 'Vaardigheden',
-        'sub_1_title' => 'Ervaring met',
+        'sub_1_title' => 'Technische kennis:',
         'sub_2_title' => 'Kwaliteitsgericht',
         'sub_2_info' => 'Werk afleveren om trots op te zijn, daar streef ik elke dag voor.',
         'sub_3_title' => 'Veerkracht',
@@ -89,9 +89,6 @@ return [
         'sub_5_eng_state' => 'goed',
         'sub_6_fr' => 'Frans',
         'sub_6_fr_state' => 'beperkt',
-        'carousel_title' => 'Bekend met:',
-        'resume_carousel' => 'Carrousel hervatten',
-        'pause_carousel' => 'Carrousel pauzeren',
     ],
     'experience' => [
         'title' => 'Ervaring',

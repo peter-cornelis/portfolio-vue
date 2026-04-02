@@ -40,7 +40,7 @@ const { t } = useI18n();
                 </ul>
             </div>
         </article>
-        <h3 class="text-center font-semibold py-8">{{ t('skills.carousel_title') }}</h3>
+        <h3 class="text-center font-semibold py-8">{{ t('skills.sub_1_title') }}</h3>
         <tech-lists :icons-size="'w-10'" />
     </section>
 </template>

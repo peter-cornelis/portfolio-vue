@@ -78,7 +78,7 @@ return [
     ],
     'skills' => [
         'title' => 'Skills',
-        'sub_1_title' => 'Technical expertise',
+        'sub_1_title' => 'Technical expertise:',
         'sub_2_title' => 'Quality-oriented',
         'sub_2_info' => 'Delivering work where I can be proud of, is my daily goal.',
         'sub_3_title' => 'Resilient',
@@ -92,9 +92,6 @@ return [
         'sub_5_eng_state' => 'advanced',
         'sub_6_fr' => 'French',
         'sub_6_fr_state' => 'limited',
-        'carousel_title' => 'Familiar with:',
-        'resume_carousel' => 'Resume carousel',
-        'pause_carousel' => 'Pause carousel',
     ],
     'experience' => [
         'title' => 'Experience',

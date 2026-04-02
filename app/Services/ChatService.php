@@ -71,9 +71,8 @@ class ChatService
         }
     }
 
-    private function getGeminiAnswer(string $question): string
+    private function getGeminiAnswer(string $question, string $vacancyData): string
     {
-        $vacancyData = session('vacancyData', '');
         $instructions = str_replace('{vacancyData}', $vacancyData, config('gemini.system_instructions'));
         $answer = Gemini::generativeModel(model: 'gemini-2.5-flash')
             ->withSystemInstruction(Content::parse($instructions))
