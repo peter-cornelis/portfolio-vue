@@ -8,7 +8,8 @@ import LanguageToggle from "@/components/LanguageToggle.vue";
 defineProps({
     section: String,
     toggleType: String,
-    mobile: Boolean
+    mobile: Boolean,
+    active: Boolean
 });
 
 const { t } = useI18n();
@@ -24,8 +25,8 @@ const { toggleMenu } = useMenu();
             class="relative toggle-menu inline-block z-10 w-full text-sm font-medium text-center px-4 py-2">
             {{ t(`nav.${section}`) }}
             <div class="w-4 h-0.5 absolute bottom-0 left-1/2 -translate-x-1/2" :class="{
-                'bg-indigo-300': activeSection === section,
-                'dark:bg-lime-200': !mobile && activeSection === section
+                'bg-indigo-300': active,
+                'dark:bg-lime-200': !mobile && active
             }" />
         </a>
         <language-toggle v-if="toggleType === 'lang'" />

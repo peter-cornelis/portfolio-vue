@@ -2,10 +2,24 @@
 import NavLink from "@/components/NavLink.vue";
 import { useMenu } from "@/composables/useMenu.js";
 import { useDimension } from "@/composables/useDimension.js";
+import { ref, onMounted } from "vue";
 
-const sections = ["about", "skills", "experience", "projects", "contact"];
+const navLinks = ["about", "skills", "experience", "projects", "contact"];
 const { showMobile } = useMenu();
 const { isDesktop } = useDimension();
+
+const current = ref("about");
+
+onMounted(() => {
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+        sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+                current.value = section.getAttribute("id");
+            }
+        });
+    });
+});
 </script>
 
 <template>
@@ -17,7 +31,8 @@ const { isDesktop } = useDimension();
             <div class="relative grid grid-flow-col items-center">
                 <nav v-if="isDesktop" class="ml-auto w-fit">
                     <ul class="grid grid-flow-col gap-2">
-                        <nav-link v-for="section in sections" :section="section" />
+                        <nav-link v-for="navLink in navLinks" :key="navLink" :section="navLink"
+                            :active="current === navLink" />
                     </ul>
                 </nav>
                 <nav-link v-else toggle-type="menu" :mobile="true" />
@@ -32,8 +47,9 @@ const { isDesktop } = useDimension();
     <transition>
         <nav v-if="!isDesktop && showMobile"
             class="sticky z-99 top-13.5 left-0 w-full items-center white-glass shadow-md">
-            <ul class="grid sm:grid-flow-col sm:w-fit sm:py-1 gap-2 sm:mx-auto">
-                <nav-link v-for="section in sections" :section="section" :mobile="true" />
+            <ul class="grid sm:grid-flow-col sm:w-fit sm:py-1 pb-1 gap-2 sm:mx-auto">
+                <nav-link v-for="navLink in navLinks" :key="navLink" :section="navLink" :mobile="true"
+                    :active="current === navLink" />
             </ul>
         </nav>
     </transition>
