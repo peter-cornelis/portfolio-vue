@@ -8,10 +8,10 @@ const { t } = useI18n();
 <template>
     <section id="about" class="relative grid lg:grid-cols-[auto_1fr] my-10">
         <span aria-hidden="true"
-            class="absolute -top-302 -left-100 bg-linear-to-tr from-emerald-300 dark:from-emerald-600 to-cyan-200 dark:to-cyan-500 w-400 h-400 rounded-full -z-10 shadow-2xl shadow-teal-300/20 dark:shadow-teal-200/10 transition-colors duration-500">
+            class="absolute -top-302 -left-100 bg-linear-to-tr from-emerald-300 dark:from-emerald-600 to-cyan-200 dark:to-cyan-500 w-400 h-400 rounded-full -z-10 shadow-[0px_0px_70px_15px] shadow-teal-300/20 dark:shadow-teal-200/20 transition-colors duration-500">
         </span>
         <span aria-hidden="true"
-            class="absolute -top-202 -left-10 bg-primary dark:bg-darkPrimary w-220 h-220 rounded-full -z-10 shadow-[inset_0_0_30px_15px] shadow-teal-300/20 dark:shadow-teal-300/10 transition-colors duration-500">
+            class="absolute -top-202 -left-10 bg-primary dark:bg-darkPrimary w-220 h-220 rounded-full -z-10 shadow-[inset_0_0_40px_15px] shadow-teal-300/20 dark:shadow-teal-300/20 transition-colors duration-500">
         </span>
         <div
             class="bg-white/25 rounded-[50%_50%_10%_50%] p-2 w-fit row-span-3 shadow mx-auto mt-8 mb-auto lg:ml-6 lg:mr-18">

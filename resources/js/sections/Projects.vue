@@ -43,10 +43,10 @@ function setActiveProject(index) {
 <template>
     <section id="projects" class="relative">
         <span aria-hidden="true"
-            class="absolute top-5 left-1/2 -translate-x-1/2 bg-linear-to-bl from-rose-300 dark:from-rose-400 to-purple-300 w-140 h-140 rounded-full -z-10 shadow-2xl shadow-rose-300/20 dark:shadow-rose-300/90 transition-all duration-1000">
+            class="absolute top-5 left-1/2 -translate-x-1/2 bg-linear-to-bl from-rose-300 dark:from-rose-400 to-purple-300 w-140 h-140 rounded-full -z-10 shadow-[0px_0px_70px_15px] shadow-rose-300/20 transition-all duration-1000">
         </span>
         <span aria-hidden="true"
-            class="absolute top-100 left-1/3 -translate-x-1/2 bg-linear-to-br from-rose-300 dark:from-rose-400 to-purple-400 w-60 h-60 rounded-full -z-10 shadow-2xl shadow-rose-300/20 dark:shadow-rose-300/10 transition-all duration-1000">
+            class="absolute top-100 left-1/3 -translate-x-1/2 bg-linear-to-br from-rose-300 dark:from-rose-400 to-purple-400 w-60 h-60 rounded-full -z-10 shadow-[0px_0px_30px_5px] shadow-rose-300/20 transition-all duration-1000">
         </span>
         <h2>{{ t('projects.title') }}</h2>
         <ul class="shadow-lg shadow-black/5 glass max-w-4xl mx-auto overflow-y-clip">
