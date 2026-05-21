@@ -1,8 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
-import { github, techIcons, arrowLeft, arrowDown } from "@/components/svgs";
-import ArrowDown from "@/components/svgs/ArrowDown.vue";
+import { github, techIcons, arrowRight, arrowDown } from "@/components/svgs";
 
 const opened = ref(0);
 const { t } = useI18n();
@@ -55,10 +54,10 @@ function setActiveProject(index) {
                 class="relative p-2 first:rounded-t-lg last:rounded-b-lg not-last:border-b border-black/5 dark:border-white/5 transition-colors duration-300"
                 :class="{ 'cursor-pointer hover:bg-indigo-700/5 dark:hover:bg-white/3': opened !== index }">
                 <h3 class="relative text-center">{{ project.name }}
-                    <component v-if="opened !== index" :is="arrowLeft"
-                        class="absolute right-0 top-0 w-8 mx-auto opacity-60 hover:opacity-80" />
-                    <component v-else :is="arrowDown"
-                        class="absolute right-0 top-0 w-8 mx-auto opacity-60 hover:opacity-80" />
+                    <component v-if="opened !== index" :is="arrowDown"
+                        class="absolute left-2 top-0 w-8 mx-auto opacity-60 hover:opacity-80" />
+                    <component v-else :is="arrowRight"
+                        class="absolute left-2 top-0 w-8 mx-auto opacity-60 hover:opacity-80" />
                 </h3>
                 <transition name="project">
                     <div v-if="opened === index"><!-- extra container resolve transition glitch by padding-->

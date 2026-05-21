@@ -23,7 +23,7 @@ import phone from "./Phone.vue";
 import mail from "./Mail.vue";
 import car from "./Car.vue";
 import linked from "./Link.vue";
-import arrowLeft from "./ArrowLeft.vue";
+import arrowRight from "./ArrowRight.vue";
 import arrowDown from "./ArrowDown.vue";
 
 
@@ -57,6 +57,6 @@ export {
     mail,
     car,
     linked,
-    arrowLeft,
+    arrowRight,
     arrowDown,
 };
