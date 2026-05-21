@@ -23,6 +23,8 @@ import phone from "./Phone.vue";
 import mail from "./Mail.vue";
 import car from "./Car.vue";
 import linked from "./Link.vue";
+import arrowLeft from "./ArrowLeft.vue";
+import arrowDown from "./ArrowDown.vue";
 
 
 const techIcons = {
@@ -55,4 +57,6 @@ export {
     mail,
     car,
     linked,
+    arrowLeft,
+    arrowDown,
 };

@@ -101,6 +101,7 @@ return [
         'sub_3_title' => 'sales',
         'sub_4_title' => 'Office administration and data managment',
         'sub_5_title' => 'Technician NetworkInfrastructure',
+        'sub_6_title' => 'Internship as Developer',
     ],
     'projects' => [
         'title' => 'Projects',

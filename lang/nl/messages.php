@@ -98,6 +98,7 @@ return [
         'sub_3_title' => 'winkelbediende',
         'sub_4_title' => '7e kantooradministratie en gegevensbeheer',
         'sub_5_title' => 'Technicus netwerkinfrastructuur',
+        'sub_6_title' => 'Stage als ontwikkelaar',
     ],
     'projects' => [
         'title' => 'Projecten',
