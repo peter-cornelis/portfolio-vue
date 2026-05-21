@@ -7,7 +7,7 @@ const opened = ref(0);
 const { t } = useI18n();
 const projects = computed(() => [
     {
-        name: "Eurocom Dashboard",
+        name: "Eurocom Software",
         alt: t('projects.sub_eurocom_alt'),
         description: t('projects.sub_eurocom_info'),
         imageUrl: new URL('../../images/eurocom_dashboard.webp', import.meta.url).href,
@@ -79,8 +79,18 @@ function setActiveProject(index) {
                                         <h4 class="mt-4">{{ t('projects.used') }}:</h4>
                                     </div>
                                     <div class="flex gap-4 mx-auto p-1 mt-2 w-fit">
-                                        <component v-for="tech in project.usedTech" :key="tech.name" :is="tech.icon"
-                                            class="w-6" :mono="true" />
+                                        <div v-for="tech in project.usedTech" :key="tech.name" class="relative group">
+                                            <component :is="tech.icon" class="w-6" :mono="true" />
+                                            <div
+                                                class="absolute left-1/2 -translate-x-1/2 group-hover:flex hidden flex-col items-center">
+                                                <div
+                                                    class="mx-auto border-6 border-transparent border-b-black/70 w-0" />
+                                                <span
+                                                    class="whitespace-nowrap bg-black/70 text-white text-xs rounded px-2 py-1 shadow-lg shadow-black/50">
+                                                    {{ tech.name }}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank"
