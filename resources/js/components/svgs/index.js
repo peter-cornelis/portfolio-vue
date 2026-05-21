@@ -25,6 +25,11 @@ import car from "./Car.vue";
 import linked from "./Link.vue";
 import arrowRight from "./ArrowRight.vue";
 import arrowDown from "./ArrowDown.vue";
+import docker from "./Docker.vue";
+import prometheus from "./Prometheus.vue";
+import grafana from "./Grafana.vue";
+import python from "./Python.vue";
+import powershell from "./Powershell.vue";
 
 
 const techIcons = {
@@ -40,6 +45,11 @@ const techIcons = {
     alpine: {icon: alpine, name: 'Alpine.js', type: 'frontend'},
     livewire: {icon: livewire, name: 'Livewire', type: 'backend'},
     bootstrap: {icon: bootstrap, name: 'Bootstrap', type: 'frontend'},
+    docker: {icon: docker, name: 'Docker', type: 'tool'},
+    prometheus: {icon: prometheus, name: 'Prometheus', type: 'tool', knowledge: false},
+    grafana: {icon: grafana, name: 'Grafana', type: 'tool', knowledge: false},
+    python: {icon: python, name: 'Python', type: 'backend', knowledge: false},
+    powershell: {icon: powershell, name: 'Powershell', type: 'backend'},
 };
 
 export {

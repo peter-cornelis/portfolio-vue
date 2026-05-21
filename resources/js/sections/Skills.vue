@@ -1,6 +1,5 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { techIcons } from "@/components/svgs";
 import TechLists from "@/components/TechLists.vue";
 
 const { t } = useI18n();

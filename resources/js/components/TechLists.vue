@@ -16,9 +16,9 @@ defineProps({
 
 const { t } = useI18n();
 const icons = shallowRef(Object.values(techIcons));
-const backendIcons = computed(() => icons.value.filter(icon => icon.type === 'backend'));
-const frontendIcons = computed(() => icons.value.filter(icon => icon.type === 'frontend'));
-const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool'));
+const backendIcons = computed(() => icons.value.filter(icon => icon.type === 'backend' && icon.knowledge !== false));
+const frontendIcons = computed(() => icons.value.filter(icon => icon.type === 'frontend' && icon.knowledge !== false));
+const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool' && icon.knowledge !== false));
 </script>
 <template>
     <div
@@ -27,7 +27,7 @@ const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool'
             <h3 class="type-skill">Backend</h3>
             <ul class="grid grid-cols-2 gap-4">
                 <li v-for="tech in backendIcons" :key="tech.name"
-                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center">
+                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center w-24">
                     <component :is="tech.icon" :class="[iconsSize, 'not-print:mx-auto']" :mono="mono" />
                     {{ tech.name }}
                 </li>
@@ -36,9 +36,9 @@ const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool'
         <div
             class="not-print:max-md:col-span-2 md:border-l print:border-l border-black/10 not-print:dark:border-white/10 w-fit px-8 not-print:max-md:pt-8">
             <h3 class="type-skill">Frontend</h3>
-            <ul class="grid grid-cols-4 gap-4">
+            <ul class="grid grid-cols-3 gap-4">
                 <li v-for="tech in frontendIcons" :key="tech.name"
-                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center">
+                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center w-24">
                     <component :is="tech.icon" :class="[iconsSize, 'not-print:mx-auto']" :mono="mono" />
                     {{ tech.name }}
                 </li>
@@ -46,9 +46,9 @@ const toolIcons = computed(() => icons.value.filter(icon => icon.type === 'tool'
         </div>
         <div class="not-print:max-md:row-1 border-l border-black/10 not-print:dark:border-white/10 w-fit px-8">
             <h3 class="type-skill">Tools</h3>
-            <ul class="grid grid-flow-col gap-4 mx-auto">
+            <ul class="grid grid-cols-1 gap-4 mx-auto">
                 <li v-for="tech in toolIcons" :key="tech.name"
-                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center">
+                    class="grid print:flex not-print:justify-center gap-2 items-center not-print:text-center w-24">
                     <component :is="tech.icon" :class="[iconsSize, 'not-print:mx-auto']" :mono="mono" />
                     {{ tech.name }}
                 </li>
