@@ -76,7 +76,7 @@ function submit() {
             <div class="w-fit bg-linear-to-r glass pt-4 rounded-lg mb-auto hidden md:block">
                 <h3 class="text-center">Socials</h3>
                 <ul
-                    class="grid grid-flow-col w-fit mt-4 py-4 px-8 items-center bg-linear-to-r from-teal-400 to-emerald-300 dark:from-teal-500 dark:to-emerald-400 text-black rounded-b-lg">
+                    class="grid grid-flow-col w-fit mt-4 py-4 px-8 items-center bg-linear-to-r from-violet-300 to-teal-300 dark:from-violet-500 dark:to-emerald-400 text-black rounded-b-lg">
                     <li class="border-r pr-4 border-white/25">
                         <a href="https://github.com/peter-cornelis" target="_blank" rel="noopener noreferrer"
                             :title="t('general.github_profile')" class="relative">

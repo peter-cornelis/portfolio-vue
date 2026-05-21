@@ -103,6 +103,8 @@ return [
     'projects' => [
         'title' => 'Projecten',
         'used' => 'Gebruikte technologieën',
+        'sub_eurocom_alt' => 'Screenshot van Eurocom Dashboard website',
+        'sub_eurocom_info' => 'Tijdens mijn stage bouwde ik een gecontaineriseerde netwerkmonitoring dashboard met Docker, Prometheus en Grafana, beveiligd via een Caddy reverse proxy en Tailscale VPN mesh. Ik integreerde PowerShell-scripting om Dropbox-services te monitoren en ontwikkelde een Python webhook-ontvanger om alertmeldingen te automatiseren.',
         'sub_drop_alt' => 'Screenshot van Dropzoned website',
         'sub_drop_info' => 'Applicatie die naadloze bestandsuploads mogelijk maakt door Livewire\'s WithFileUploads eigenschappen te combineren met een drag-and-drop interface. Ontwikkeld met focus op gebruikerservaring, validatie en security.',
         'sub_portfolio_alt' => 'Screenshot van Portfolio website',

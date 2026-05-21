@@ -7,6 +7,15 @@ const opened = ref(0);
 const { t } = useI18n();
 const projects = computed(() => [
     {
+        name: "Eurocom Dashboard",
+        alt: t('projects.sub_eurocom_alt'),
+        description: t('projects.sub_eurocom_info'),
+        imageUrl: new URL('../../images/eurocom_dashboard.webp', import.meta.url).href,
+        usedTech: [techIcons.docker, techIcons.prometheus, techIcons.grafana, techIcons.powershell, techIcons.python, techIcons.caddy, techIcons.css],
+        githubUrl: "https://github.com/peter-cornelis/eurocom_dashboard",
+        demoUrl: null
+    },
+    {
         name: "Dropzoned",
         alt: t('projects.sub_drop_alt'),
         description: t('projects.sub_drop_info'),
@@ -74,12 +83,12 @@ function setActiveProject(index) {
                                             class="w-6" :mono="true" />
                                     </div>
                                 </div>
-                                <a :href="project.demoUrl" target="_blank" rel="noopener noreferrer"
-                                    class="btn text-center mt-auto">
+                                <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank"
+                                    rel="noopener noreferrer" class="btn text-center mt-auto">
                                     Live Demo
                                 </a>
                                 <a :href="project.githubUrl" target="_blank" rel="noopener noreferrer"
-                                    class="btn-secondary mt-auto">
+                                    class="btn-secondary mt-auto" :class="project.demoUrl ? '' : 'sm:col-span-2'">
                                     <span class="flex items-center gap-2 mx-auto w-fit">
                                         <component :is="github" class="w-6" />
                                         Code

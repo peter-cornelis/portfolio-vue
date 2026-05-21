@@ -106,6 +106,8 @@ return [
     'projects' => [
         'title' => 'Projects',
         'used' => 'Used technologies',
+        'sub_eurocom_alt' => 'Screenshot of Eurocom Dashboard website',
+        'sub_eurocom_info' => 'On my internship I built a containerized network monitoring dashboard using Docker, Prometheus, and Grafana, secured via a Caddy reverse proxy and Tailscale VPN mesh. Integrated PowerShell scripting to monitor Dropbox services and developed a Python webhook receiver to automate alert notifications.',
         'sub_drop_alt' => 'Screenshot of Dropzoned website',
         'sub_drop_info' => 'Application enabling seamless file uploads by combining Livewire\'s WithFileUploads traits with a custom-built drag-and-drop interface. Developed with a focus on user experience, validation, and security.',
         'sub_portfolio_alt' => 'Screenshot of Portfolio website',

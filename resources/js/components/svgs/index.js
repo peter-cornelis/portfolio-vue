@@ -30,6 +30,7 @@ import prometheus from "./Prometheus.vue";
 import grafana from "./Grafana.vue";
 import python from "./Python.vue";
 import powershell from "./Powershell.vue";
+import caddy from "./Caddy.vue";
 
 
 const techIcons = {
@@ -50,6 +51,7 @@ const techIcons = {
     grafana: {icon: grafana, name: 'Grafana', type: 'tool', knowledge: false},
     python: {icon: python, name: 'Python', type: 'backend', knowledge: false},
     powershell: {icon: powershell, name: 'Powershell', type: 'backend'},
+    caddy: {icon: caddy, name: 'Caddy', type: 'tool', knowledge: false},
 };
 
 export {
