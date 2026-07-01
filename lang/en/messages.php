@@ -99,32 +99,22 @@ return [
         'sub_1_title' => 'full stack developer',
         'sub_2_title' => 'computer technician',
         'sub_3_title' => 'sales',
-        'sub_4_title' => 'Office administration and data managment',
-        'sub_5_title' => 'Technician NetworkInfrastructure',
-        'sub_6_title' => 'Internship as Developer',
+        'sub_4_title' => 'Office administration and data management',
+        'sub_5_title' => 'Network Infrastructure Technician',
+        'sub_6_title' => 'Developer Internship',
+        'sub_7_title' => 'Micro-Credential - Financial Planning for Individuals',
     ],
     'projects' => [
         'title' => 'Projects',
         'used' => 'Used technologies',
-        'sub_eurocom_alt' => 'Screenshot of Eurocom Dashboard website',
-        'sub_eurocom_info' => 'On my internship I built a containerized network monitoring dashboard using Docker, Prometheus, and Grafana, secured via a Caddy reverse proxy and Tailscale VPN mesh. Integrated PowerShell scripting to monitor Dropbox services and developed a Python webhook receiver to automate alert notifications.',
+        'sub_eurocom_alt' => 'Screenshot of my internship project',
+        'sub_eurocom_info' => 'During my internship, I researched and developed a network monitoring platform based on Grafana. I devised a solution using Docker, Prometheus, and Grafana for centralized monitoring and visualization, regularly testing technical choices and functionalities with the employer. Additionally, I developed a PowerShell script for monitoring Dropbox and used Python webhooks to trigger alarm sounds based on Grafana alerts. Furthermore, I secured external access through a reverse proxy and VPN solution.',
         'sub_drop_alt' => 'Screenshot of Dropzoned website',
-        'sub_drop_info' => 'Application enabling seamless file uploads by combining Livewire\'s WithFileUploads traits with a custom-built drag-and-drop interface. Developed with a focus on user experience, validation, and security.',
+        'sub_drop_info' => 'An application that enables seamless file uploads by combining Livewire\'s WithFileUploads functionality with a drag-and-drop interface. The focus was on user-friendliness, validation, and security to ensure a reliable and intuitive upload experience. This project was also my first experience with Alpine.js and Livewire or JavaScript frameworks in general.',
         'sub_portfolio_alt' => 'Screenshot of Portfolio website',
-        'sub_portfolio_info' => 'Modern portfolio featuring an AI-powered chatbot that uses the Google Gemini API and Browserless API to compare my skills with those required by a given job vacancy link. For the frontend, the Vue.js Composition API was used.',
+        'sub_portfolio_info' => 'A modern portfolio website with an AI-powered chatbot that uses the Google Gemini API and Browserless API to compare skills with a given job vacancy link. For the frontend, I used the Vue.js Composition API to create a dynamic and user-friendly interface. Additionally, I developed a custom print page that could be exported to PDF in the development environment.',
         'sub_rally_alt' => 'Screenshot of stock market game website',
-        'sub_rally_info' => 'Simple stock market game with daily price and statistics updates through the FMP API.
-            AI integration enhances search functionality and provides up-to-date buy or sell recommendations for each stock.',
-        'sub_3_alt' => 'Screenshot of video store website',
-        'sub_3_info' => 'Web application for managing a video rental store\'s movie collection.
-            Staff members must log in with proper authentication. This was my first Laravel project.',
-        'sub_4_alt' => 'Screenshot of Portfolio 1.0 website',
-        'sub_4_info' => 'First portfolio website featuring multilingual support using JSON and JavaScript.
-            Includes Project Euler coding challenges as a fun extra.',
-        'sub_5_alt' => 'Screenshot of pizzeria website',
-        'sub_5_info' => 'Pizzeria webshop with a simple implementation of the Mollie API.
-            This was a test for the PHP Advanced course.
-            Feel free to contact me if you want to review the code.',
+        'sub_rally_info' => 'A simple stock market game with daily price and statistics updates via the FMP API. Additionally, AI was used to improve search functionality and provide up-to-date buy or sell recommendations for each stock. The application also uses Redis caching for performance and synchronizes stock data via scheduled cron jobs.',
         'onreq' => 'Code on request',
     ],
     'contact' => [

@@ -159,5 +159,11 @@ return [
         'AlpineJS',
         'Bootstrap',
         'Git',
+        'Docker',
+        'Prometheus',
+        'Grafana',
+        'PowerShell',
+        'Python',
+        'Caddy',
     ],
 ];

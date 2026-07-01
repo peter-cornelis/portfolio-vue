@@ -59,7 +59,7 @@ textarea,
 }
 
 .soft-img {
-    @apply shadow border border-white/5 rounded-lg w-full max-w-md mx-auto self-stretch object-cover;
+    @apply shadow outline outline-black/2 rounded-lg w-full self-stretch object-cover;
 }
 
 main .glass,
@@ -142,6 +142,18 @@ main .white-glass {
     40%,
     60% {
         transform: translate3d(2px, -2px, 0);
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(0deg);
     }
 }
 

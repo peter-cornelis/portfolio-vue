@@ -9,7 +9,7 @@ const { t } = useI18n();
         <h2>{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
             <ol class="relative w-fit ml-8 pb-4 mb-28 border-l border-black/20 dark:border-white/40">
-                <timeline-item :end="2026" at="Eurocom Software Izegem" :isWork="true">
+                <timeline-item end="2026" at="Eurocom Software Izegem" :isWork="true">
                     {{ t('experience.sub_6_title') }}
                 </timeline-item>
                 <timeline-item start="2025" :end="`${t('experience.present')}`" at="vdab">

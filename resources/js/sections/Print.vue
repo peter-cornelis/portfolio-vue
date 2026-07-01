@@ -105,22 +105,23 @@ const { t } = useI18n();
                     {{ t('experience.sub_4_title') }}
                 </timeline-item-vert>
                 <timeline-item-vert start="2007" end="2012" at="Colora Gent" :isWork="true"
-                    class="absolute -top-29 left-35 w-30">
+                    class="absolute -top-29 left-47 w-30">
                     {{ t('experience.sub_3_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2014" end="2015" at="vdab" class="relative top-7 left-13 w-30">
+                <timeline-item-vert start="2014" end="2015" at="vdab" class="relative top-7 left-34 w-60">
                     {{ t('experience.sub_5_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true"
-                    class="relative -top-29 left-24 w-56">
+                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true" :startRight="true"
+                    class="relative -top-29 -left-26 w-56">
                     {{ t('experience.sub_2_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2023" end="2024" at="HoGent" class="relative top-7 left-10 w-70">
-                    Micro-Credential - Financiële planning voor particulieren
-                </timeline-item-vert>
                 <timeline-item-vert start="2025" :end="`${t('experience.present')}`" at="vdab"
-                    class="absolute -top-29 right-0 w-50">
+                    class="relative top-7 left-12 w-60">
                     {{ t('experience.sub_1_title') }}
+                </timeline-item-vert>
+                <timeline-item-vert end="2026" at="Eurocom Software" :isWork="true" :startRight="true"
+                    class="absolute -top-29 right-0 w-60">
+                    {{ t('experience.sub_6_title') }}
                 </timeline-item-vert>
             </ol>
         </div>

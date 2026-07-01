@@ -98,31 +98,20 @@ return [
         'sub_3_title' => 'winkelbediende',
         'sub_4_title' => '7e kantooradministratie en gegevensbeheer',
         'sub_5_title' => 'Technicus netwerkinfrastructuur',
-        'sub_6_title' => 'Stage als ontwikkelaar',
+        'sub_6_title' => 'Stage ontwikkelaar',
+        'sub_7_title' => 'Micro-Credential - Financiële planning voor particulieren',
     ],
     'projects' => [
         'title' => 'Projecten',
         'used' => 'Gebruikte technologieën',
-        'sub_eurocom_alt' => 'Screenshot van Eurocom Dashboard website',
-        'sub_eurocom_info' => 'Tijdens mijn stage bouwde ik een gecontaineriseerde netwerkmonitoring dashboard met Docker, Prometheus en Grafana, beveiligd via een Caddy reverse proxy en Tailscale VPN mesh. Ik integreerde PowerShell-scripting om Dropbox-services te monitoren en ontwikkelde een Python webhook-ontvanger om alertmeldingen te automatiseren.',
+        'sub_eurocom_alt' => 'Screenshot van mijn stage project',
+        'sub_eurocom_info' => 'Tijdens mijn stage onderzocht en ontwikkelde ik een netwerkmonitoringplatform op basis van Grafana. Ik werkte een oplossing uit met Docker, Prometheus en Grafana voor centrale monitoring en visualisatie, waarbij ik regelmatig technische keuzes en functionaliteiten toetste bij de werkgever. Daarnaast ontwikkelde ik een PowerShell-script voor het monitoren van Dropbox en gebruikte ik Python-webhooks om alarm geluiden te activeren bij Grafana-alerts. Verder beveiligde ik externe toegang via een reverse proxy en een VPN-oplossing.',
         'sub_drop_alt' => 'Screenshot van Dropzoned website',
-        'sub_drop_info' => 'Applicatie die naadloze bestandsuploads mogelijk maakt door Livewire\'s WithFileUploads eigenschappen te combineren met een drag-and-drop interface. Ontwikkeld met focus op gebruikerservaring, validatie en security.',
+        'sub_drop_info' => 'Een applicatie die naadloze bestandsuploads mogelijk maakt door Livewire\'s WithFileUploads-functionaliteit te combineren met een drag-and-drop interface. De focus lag op gebruiksvriendelijkheid, validatie en security om een betrouwbare en intuïtieve uploadervaring te garanderen. Dit project was tevens mijn eerste ervaring met Alpine.js en Livewire of Javascript frameworks in het algemeen.',
         'sub_portfolio_alt' => 'Screenshot van Portfolio website',
-        'sub_portfolio_info' => 'Moderne portfolio, met een AI-gestuurde chatbot die via de Google Gemini API en Browserless API mijn vaardigheden kan vergelijken met deze van een ingegeven vacature link. Voor de frontend werd de Vue.js Composition API gebruikt.',
+        'sub_portfolio_info' => 'Een moderne portfolio-website met een AI-gestuurde chatbot die via de Google Gemini API en Browserless API vaardigheden vergelijkt met een ingegeven vacaturelink. Voor de frontend maakte ik gebruik van de Vue.js Composition API om een dynamische en gebruiksvriendelijke interface te realiseren. Daarnaast ontwikkelde ik een aangepaste printpagina die in de developmentomgeving kon worden geëxporteerd naar PDF.',
         'sub_rally_alt' => 'Screenshot van beursspel website',
-        'sub_rally_info' => 'Eenvoudig beursspel, met dagelijkse koers & statistiek updates via de FMP API.
-            Verder wordt AI gebruikt om zoekacties te verslimmen en elk aandeel van een up to date koop of verkoop advies te voorzien.',
-        'sub_3_alt' => 'Screenshot van videotheek website',
-        'sub_3_info' => 'Webapplicatie die de filmcollectie van een videotheek beheert.
-            Medewerkers dienen aan te melden met de nodige verificatie.
-            Dit was mijn eerste Laravel project.',
-        'sub_4_alt' => 'Screenshot van Portfolio 1.0 website',
-        'sub_4_info' => 'Eerste portfolio website, met meertaligheid aan de hand van JSON en Javascript.
-            Als leuke extra werden enkele Project Euler oefeningen geïmplementeerd.',
-        'sub_5_alt' => 'Screenshot van pizzeria website',
-        'sub_5_info' => 'Pizzeria webshop met een eenvoudige implementatie van de Mollie API.
-            Dit betreft een test voor PHP Advanced.
-            Neem gerust contact om de code in te kijken.',
+        'sub_rally_info' => 'Een eenvoudig beursspel met dagelijkse koers- en statistiekupdates via de FMP API. Verder werd AI gebruikt om zoekopdrachten te verbeteren en per aandeel een actueel koop- of verkoopadvies te genereren. De applicatie maakt tevens gebruik van Redis caching voor performantie en synchroniseert beursdata via geplande cronjobs.',
         'onreq' => 'Code op aanvraag',
     ],
     'contact' => [

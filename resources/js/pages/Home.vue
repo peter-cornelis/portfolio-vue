@@ -20,6 +20,6 @@ import Print from "@/sections/Print.vue";
     </main>
     <Print />
     <footer class="print:hidden">
-        <p class="text-center py-4 text-sm opacity-70">© 2026 | Peter Cornelis</p>
+        <p class="text-center py-4 mt-12 text-sm opacity-70">© 2026 | Peter Cornelis</p>
     </footer>
 </template>
