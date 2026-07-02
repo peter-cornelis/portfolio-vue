@@ -21,7 +21,7 @@ class ChatService
 
         if (str_contains($question, 'https://')) {
             $vacancyData = $this->resolveVacancyData($question);
-        } elseif (session()->has('vacancyData')) {
+        } elseif (session()->has('vacancyData') && is_string(session('vacancyData'))) {
             $vacancyData = session('vacancyData');
         }
 
@@ -57,7 +57,7 @@ class ChatService
             $result = Browserless::scrape()
                 ->url($url)
                 ->waitForTimeout(5000)
-                ->element('main', ['text' => true])
+                ->element('main')
                 ->send();
 
             $content = $result->results('main');
@@ -73,18 +73,21 @@ class ChatService
 
     private function getGeminiAnswer(string $question, string $vacancyData): string
     {
-        $instructions = str_replace('{vacancyData}', $vacancyData, config('gemini.system_instructions'));
+        /** @var string $instructionsTemplate */
+        $instructionsTemplate = config('gemini.system_instructions');
+        $instructions = str_replace('{vacancyData}', $vacancyData, $instructionsTemplate);
+
         $answer = Gemini::generativeModel(model: 'gemini-2.5-flash')
             ->withSystemInstruction(Content::parse($instructions))
             ->generateContent($question)
             ->text();
 
-        $answer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
+        $safeAnswer = htmlspecialchars($answer, ENT_QUOTES, 'UTF-8');
 
-        return preg_replace(
+        return (string) preg_replace(
             '@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@',
             '<a href="$1" target="_blank" rel="noopener noreferrer" class="underline">$1</a>',
-            $answer
+            $safeAnswer
         );
     }
 }

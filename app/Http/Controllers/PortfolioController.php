@@ -37,6 +37,7 @@ class PortfolioController extends Controller
 
     public function contact(ContactFormRequest $request): RedirectResponse
     {
+        /** @var array<string, string> $validated */
         $validated = $request->validated();
 
         Mail::to(config('mail.from.address'))
@@ -50,9 +51,10 @@ class PortfolioController extends Controller
 
     public function chat(ChatFormRequest $request, ChatService $chatService): RedirectResponse
     {
-        $validated = $request->validated();
+        /** @var string $validatedQuestion */
+        $validatedQuestion = $request->validated('question');
 
-        $answer = $chatService->getAnswer($validated['question']);
+        $answer = $chatService->getAnswer($validatedQuestion);
 
         return redirect()->back()->with('answer', $answer);
     }
