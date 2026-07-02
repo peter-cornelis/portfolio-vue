@@ -31,7 +31,7 @@ class ChatFormRequest extends FormRequest
     /**
      * Get the error messages for the defined validation rules.
      *
-     * @return array<string, array<string>|string>
+     * @return array<string, string>
      */
     public function messages(): array
     {

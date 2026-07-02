@@ -16,6 +16,7 @@ class ContactFormMail extends Mailable
 
     /**
      * Create a new message instance.
+     * @param array<string, string> $formData
      */
     public function __construct(public array $formData) {}
 
@@ -25,7 +26,7 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->formData['email'],
+            replyTo: [$this->formData['email']],
             subject: "Portfolio: nieuw contactformulier door {$this->formData['name']}"
         );
     }

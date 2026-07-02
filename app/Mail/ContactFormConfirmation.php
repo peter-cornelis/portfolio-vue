@@ -17,6 +17,7 @@ class ContactFormConfirmation extends Mailable
 
     /**
      * Create a new message instance.
+     * @param array<string, string> $formData
      */
     public function __construct(public array $formData) {}
 
@@ -26,7 +27,7 @@ class ContactFormConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->formData['email'],
+            replyTo: [$this->formData['email']],
             subject: __('messages.confirmation_mail.contact_form_confirmation_subject', ['name' => $this->formData['name']])
         );
     }
