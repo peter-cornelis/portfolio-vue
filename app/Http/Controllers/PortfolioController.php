@@ -58,9 +58,7 @@ class PortfolioController extends Controller
 
             $pdf = Browsershot::url(route('home'))
                 ->useCookies(['language' => $locale])
-                ->setBasePath(public_path())
                 ->emulateMedia('print')
-                ->waitUntilNetworkIdle()
                 ->format('A4')
                 ->margins(10, 10, 10, 10)
                 ->pdf();
@@ -71,7 +69,7 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_'.$locale.'.pdf'), [
+        return response()->file(public_path('assets/cv_' . $locale . '.pdf'), [
             'Vary' => 'Cookie',
             'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
         ]);
