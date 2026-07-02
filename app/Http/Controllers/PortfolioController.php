@@ -11,17 +11,22 @@ use App\Mail\ContactFormMail;
 use App\Services\ChatService;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
+use Inertia\Response as InertiaResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Spatie\Browsershot\Browsershot;
+
 
 class PortfolioController extends Controller
 {
-    public function index()
+    public function index(): InertiaResponse
     {
         return Inertia::render('Home');
     }
 
-    public function toggleLanguage(string $locale)
+    public function toggleLanguage(string $locale): RedirectResponse
     {
         if (in_array($locale, ['en', 'nl'])) {
             Cookie::queue('language', $locale, 525600);
@@ -30,7 +35,7 @@ class PortfolioController extends Controller
         return redirect()->back();
     }
 
-    public function contact(ContactFormRequest $request)
+    public function contact(ContactFormRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -43,7 +48,7 @@ class PortfolioController extends Controller
         return redirect()->back();
     }
 
-    public function chat(ChatFormRequest $request, ChatService $chatService)
+    public function chat(ChatFormRequest $request, ChatService $chatService): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -52,7 +57,7 @@ class PortfolioController extends Controller
         return redirect()->back()->with('answer', $answer);
     }
 
-    public function downloadPdf(string $locale)
+    public function downloadPdf(string $locale): Response|BinaryFileResponse
     {
         if (app()->environment('local')) {
 
