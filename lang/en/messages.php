@@ -142,7 +142,7 @@ return [
     'confirmation_mail' => [
         'contact_form_confirmation_subject' => 'Portfolio: confirmation of contact form for :name',
         'contact_form_greeting' => 'Dear :name,',
-        'contact_form_thanks' => 'Thank you for contacting me and showing interest in my portfolio website. Your message has been received and I will respond as soon as possible.',
+        'contact_form_thanks' => 'Thank you for contacting me and showing interest in my profile as a Full Stack developer. Your message has been received and I will respond as soon as possible.',
         'contact_form_regards' => 'Kind regards,',
     ],
 ];
