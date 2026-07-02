@@ -9,15 +9,14 @@ use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactFormConfirmation;
 use App\Mail\ContactFormMail;
 use App\Services\ChatService;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Response;
-use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response as InertiaResponse;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Spatie\Browsershot\Browsershot;
-
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PortfolioController extends Controller
 {
@@ -76,7 +75,7 @@ class PortfolioController extends Controller
             ]);
         }
 
-        return response()->file(public_path('assets/cv_' . $locale . '.pdf'), [
+        return response()->file(public_path('assets/cv_'.$locale.'.pdf'), [
             'Vary' => 'Cookie',
             'Content-Disposition' => 'inline; filename="cv_peter_cornelis.pdf"',
         ]);
