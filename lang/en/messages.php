@@ -102,7 +102,7 @@ return [
         'sub_4_title' => 'Office administration and data management',
         'sub_5_title' => 'Network Infrastructure Technician',
         'sub_6_title' => 'Developer Internship',
-        'sub_7_title' => 'Micro-Credential - Financial Planning for Individuals',
+        'sub_7_title' => 'Financial Planning for Private Individuals',
     ],
     'projects' => [
         'title' => 'Projects',

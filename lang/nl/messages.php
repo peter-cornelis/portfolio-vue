@@ -99,7 +99,7 @@ return [
         'sub_4_title' => '7e kantooradministratie en gegevensbeheer',
         'sub_5_title' => 'Technicus netwerkinfrastructuur',
         'sub_6_title' => 'Stage ontwikkelaar',
-        'sub_7_title' => 'Micro-Credential - Financiële planning voor particulieren',
+        'sub_7_title' => 'Financiële planning voor particulieren',
     ],
     'projects' => [
         'title' => 'Projecten',

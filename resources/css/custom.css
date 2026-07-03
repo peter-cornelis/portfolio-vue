@@ -167,11 +167,15 @@ main .white-glass {
         @apply text-3xl text-center mb-4;
     }
 
-    h3 {
+    h3:not(.vitae) {
         @apply text-xl text-center;
         &:not(.type-skill) {
             @apply text-left;
         }
+    }
+
+    h3.vitae {
+        @apply text-lg;
     }
 
     h4 {

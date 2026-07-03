@@ -12,7 +12,7 @@ const { t } = useI18n();
                 <timeline-item end="2026" at="Eurocom Software Izegem" :isWork="true">
                     {{ t('experience.sub_6_title') }}
                 </timeline-item>
-                <timeline-item start="2025" :end="`${t('experience.present')}`" at="vdab">
+                <timeline-item start="2025" end="2026" at="vdab">
                     {{ t('experience.sub_1_title') }}
                 </timeline-item>
                 <timeline-item start="2015" end="2024" at="Codima BV" :isWork="true">

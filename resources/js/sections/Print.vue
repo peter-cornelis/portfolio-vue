@@ -100,27 +100,27 @@ const { t } = useI18n();
         </div>
         <h2 class="pt-8">{{ t('experience.title') }}</h2>
         <div class="w-fit mx-auto">
-            <ol class="relative flex w-full mt-38 border-t mx-auto mr-8 border-black/10">
-                <timeline-item-vert end="2006" at="Sint-Vincentius Deinze" class="relative top-7 left-0 w-60">
-                    {{ t('experience.sub_4_title') }}
-                </timeline-item-vert>
+            <ol class="relative flex w-full mt-50 border-t mx-auto mr-8 border-black/10">
                 <timeline-item-vert start="2007" end="2012" at="Colora Gent" :isWork="true"
-                    class="absolute -top-29 left-47 w-30">
+                    class="relative top-7 left-0 w-40">
                     {{ t('experience.sub_3_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2014" end="2015" at="vdab" class="relative top-7 left-34 w-60">
+                <timeline-item-vert start="2014" end="2015" at="vdab" :startRight="true"
+                    class="absolute -top-37 -left-5 w-60">
                     {{ t('experience.sub_5_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true" :startRight="true"
-                    class="relative -top-29 -left-26 w-56">
+                <timeline-item-vert start="2015" end="2024" at="Codima BV" :isWork="true"
+                    class="relative top-7 left-50 w-50">
                     {{ t('experience.sub_2_title') }}
                 </timeline-item-vert>
-                <timeline-item-vert start="2025" :end="`${t('experience.present')}`" at="vdab"
-                    class="relative top-7 left-12 w-60">
+                <timeline-item-vert end="2023" at="HoGent" :startRight="true" class="relative -top-37 -left-18 w-70">
+                    {{ t('experience.sub_7_title') }}
+                </timeline-item-vert>
+                <timeline-item-vert start="2025" end="2026" at="vdab" class="relative top-7 left-14 w-60">
                     {{ t('experience.sub_1_title') }}
                 </timeline-item-vert>
                 <timeline-item-vert end="2026" at="Eurocom Software" :isWork="true" :startRight="true"
-                    class="absolute -top-29 right-0 w-60">
+                    class="absolute -top-37 right-0 w-60">
                     {{ t('experience.sub_6_title') }}
                 </timeline-item-vert>
             </ol>

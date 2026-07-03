@@ -28,7 +28,7 @@ defineProps({
 <template>
     <li class="group">
         <span
-            class="absolute group-odd:-top-12 group-even:top-24 flex items-center justify-center w-10 h-10 text-white rounded-full shadow"
+            class="absolute group-odd:-top-12 group-even:top-32 flex items-center justify-center w-10 h-10 text-white rounded-full shadow"
             :class="[isWork ? 'bg-teal-500' : 'bg-violet-400', startRight ? 'right-0' : 'left-0']">
             <work v-if="isWork" class="w-6 h-6" />
             <school v-else class="w-6 h-6" />
@@ -37,8 +37,7 @@ defineProps({
             <span
                 class="capitalize text-heading text-xs font-semibold text-white dark:text-mainLight px-1.5 py-0.5 rounded shadow"
                 :class="isWork ? 'bg-teal-400' : 'bg-violet-400'">{{ start == null ? end : `${start}, ${end}` }}</span>
-            <h3 class="flex items-center capitalize text-lg font-semibold text-heading mt-2 p-0"
-                :class="startRight ? 'justify-end' : ''">
+            <h3 class="capitalize text-lg font-semibold text-heading mt-2 p-0 vitae">
                 <slot />
             </h3>
             <p class="uppercase text-mainDark/60 dark:text-mainLight/50 py-.5 mb-6">{{ at }}</p>
