@@ -1,6 +1,10 @@
 <script setup>
 import { lightMode, darkMode } from "@/components/svgs";
 import { onMounted, ref, watch } from 'vue';
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 let theme = ref(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 let switching = ref(false);
 
@@ -28,7 +32,8 @@ function setTheme(value) {
 
 </script>
 <template>
-    <button @click="toggleTheme()" class="relative grid w-10 h-10 z-10 rounded-full items-center justify-center">
+    <button @click="toggleTheme()" class="relative grid w-10 h-10 z-10 rounded-full items-center justify-center"
+        :title="theme === 'dark' ? t('general.toggle_light') : t('general.toggle_dark')">
         <light-mode v-if="theme === 'dark'" class="w-5 transition-transform duration-300"
             :class="switching ? 'scale-0 rotate-180' : 'scale-100 rotate-0'" />
         <dark-mode v-else class="w-5 transition-transform duration-300"

@@ -19,5 +19,8 @@
         "@vitejs/plugin-vue": "^6.0.4",
         "vue": "^3.5.30",
         "vue-i18n": "^11.2.8"
+    },
+    "allowScripts": {
+        "puppeteer@25.3.0": true
     }
 }
